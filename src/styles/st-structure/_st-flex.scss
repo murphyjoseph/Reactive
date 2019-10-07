@@ -1,0 +1,132 @@
+// # ========= --- Flex Grid Styles --- ========= # \\
+
+// DESCRIPTION -> Got some inspiration from https://github.com/ArmorDarks/ekzo
+
+// ------- FLEX PARENT PRESETS -------
+
+.st-flex-preset-1 {
+  align-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.st-flex-preset-2 {
+  align-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+// ------- FLEX PARENT HELPERS -------
+
+.st-flex        { display: flex;        }
+.st-flex-inline { display: inline-flex; }
+
+.st-flex--row          { flex-direction: row;            } // *flex default
+.st-flex--row--reverse { flex-direction: row-reverse;    }
+.st-flex--col          { flex-direction: column;         }
+.st-flex--col--reverse { flex-direction: column-reverse; }
+
+.st-flex--wrap          { flex-wrap: wrap;         }
+.st-flex--wrap--reverse { flex-wrap: wrap-reverse; }
+.st-flex--nowrap        { flex-wrap: nowrap;       } // *flex default
+
+.st-flex-x--start   { justify-content: flex-start;    } // *flex default
+.st-flex-x--center  { justify-content: center;        }
+.st-flex-x--end     { justify-content: flex-end;      }
+.st-flex-x--between { justify-content: space-between; }
+.st-flex-x--around  { justify-content: space-around;  }
+
+.st-flex-y--stretch  { align-items: stretch;    } // *flex default
+.st-flex-y--start    { align-items: flex-start; }
+.st-flex-y--center   { align-items: center;     }
+.st-flex-y--end      { align-items: flex-end;   }
+.st-flex-y--baseline { align-items: baseline;   }
+
+.st-flex-row--stretch { align-content: stretch;       }  // *flex default
+.st-flex-row--start   { align-content: flex-start;    }
+.st-flex-row--center  { align-content: center;        }
+.st-flex-row--end     { align-content: flex-end;      }
+.st-flex-row--between { align-content: space-between; }
+.st-flex-row--around  { align-content: space-around;  }
+
+// ------- FLEX CHILD GUTTER CONFIGURATIONS -------
+
+// -> This class should not be used with percent columns since
+//    they have their own gutter set in $map-col-percents
+@each $key, $value in get-sizes('gutter') {
+  .st-flex__col-gutter-#{$key} {
+    margin-right: $value;
+  }
+}
+
+[class*="st-flex__col-gutter"] {
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+// ------- FLEX CHILD COLUMNS -------
+
+// -> Columns that are percent based
+@each $percent-name, $percent-size in $map-col-percents {
+  .st-flex__col-#{$percent-name} {
+    flex: 0 0 $percent-size;
+  }
+}
+
+// -> Columns that are em based
+@each $width-name, $width-size in get-sizes('col-widths') {
+  .st-flex__col-#{$width-name} {
+    flex: 0 0 $width-size;
+    max-width: 100%;
+  }
+}
+
+// -> Columns that are auto based
+@each $auto-name, $auto-size in $map-col-auto {
+  .st-flex__col-#{$auto-name} {
+    flex: $auto-size;
+  }
+}
+
+@include mi-bp-loop("st-flex__col", "over", $map-col-percents) {
+  flex: 0 0 $temp-val;
+}
+
+@include mi-bp-loop("st-flex__col", "over", get-sizes('col-widths')) {
+  flex: 0 0 $temp-val;
+  max-width: 100%;
+}
+
+@include mi-bp-loop("st-flex__col", "over", $map-col-auto) {
+  flex: $temp-val;
+}
+
+// ------- FLEX CHILD HELPERS -------
+
+@for $i from 0 through 10 {
+  .st-flex__col-order-#{i} {
+    order: $i;
+  }
+}
+
+// ------- FLEX CHILD HELPERS -------
+
+.st-flex__col-order-first { order: -1000; }
+.st-flex__col-order-last  { order: 1000;  }
+
+.st-flex__col-y-auto     { align-self: auto;       } // *flex default
+.st-flex__col-y-stretch  { align-self: stretch;    }
+.st-flex__col-y-start    { align-self: flex-start; }
+.st-flex__col-y-center   { align-self: center;     }
+.st-flex__col-y-end      { align-self: flex-end;   }
+.st-flex__col-y-baseline { align-self: baseline;   }
+
+.st-flex__col-no-grow   { flex-grow: 0;   }
+.st-flex__col-no-shrink { flex-shrink: 0; }
+.st-flex__col-do-grow   { flex-grow: 1;   }
+.st-flex__col-do-shrink { flex-shrink: 1; }

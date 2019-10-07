@@ -1,0 +1,50 @@
+// # ========= --- Alignment Utility --- ========== # \\
+
+.ut-align-vertical-bottom {
+  @include mi-align(vertical, 'bottom');
+}
+
+.ut-align-vertical-middle {
+  @include mi-align(vertical, 'middle');
+}
+
+.ut-align-vertical-top {
+  @include mi-align(vertical, 'top');
+}
+
+.ut-align-text-left {
+  @include mi-align(text, 'left');
+  &.ut-align-text-children {
+    h1, h2, h3, h4, h5, h6, p, a, div {
+      @include mi-align(text, 'left');
+    }
+  }
+}
+
+.ut-align-text-right {
+  @include mi-align(text, 'right');
+  &.align-text-children {
+    h1, h2, h3, h4, h5, h6, p, a, div {
+      @include mi-align(text, 'right');
+    }
+  }
+}
+
+.ut-align-text-center {
+  @include mi-align(text, "center");
+  &.ut-align-text-children {
+    h1, h2, h3, h4, h5, h6, p, a, div {
+      @include mi-align(text, "center");
+    }
+  }
+}
+
+.ut-align-text-center-over-main {
+  @include breakpoint-over('main') {
+    @include mi-align(text, "center");
+  }
+}
+
+.ut-align-text-center-at-breakpoint6 {
+  @include mi-align(text, "center", "breakpoint6");
+}

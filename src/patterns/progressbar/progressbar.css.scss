@@ -1,0 +1,27 @@
+@import '../../styles/base/_alpha-base';
+
+// # ========= ---  PROGRESSBAR STYLES --- ========== # \\
+
+$local-transition-duration: .25s;
+
+.progress-bar {
+  appearance: none;
+  width: 100%;
+  height: get-size('xsm');
+  border: none;
+  transition: $local-transition-duration ease-in-out;
+  // background-color: map-fetch($map-theme, 'progress-bar-bg');
+  &::-webkit-progress-bar {
+    // background-color: map-fetch($map-theme, 'progress-bar-bg');
+  }
+  &::-webkit-progress-value {
+    // background-color: map-fetch($map-theme, 'progress-bar-bg-active');
+    transition: all $local-transition-duration;
+  }
+  &::-moz-progress-bar {
+    // background-color: map-fetch($map-theme, 'progress-bar-bg-active');
+  }
+  &::-ms-fill {
+    // background-color: map-fetch($map-theme, 'progress-bar-bg-active');
+  }
+}

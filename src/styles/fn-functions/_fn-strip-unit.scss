@@ -1,0 +1,11 @@
+// # ========= --- Strip Units Function --- ========== # \\
+
+@function fn-strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+/*
+EXAMPLE ->
+$length : 42em;
+$int    : strip-unit($length); returns 42
+*/

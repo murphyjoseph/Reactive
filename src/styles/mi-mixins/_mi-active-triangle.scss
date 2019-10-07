@@ -1,0 +1,12 @@
+// # ========= --- Active Triangle --- ========== # \\
+
+@mixin mi-active-triangle() {
+  @include mi-shape-triangle(up, 6px, get-color('white'));
+  @include mi-position('center-horizontally');
+  position: absolute;
+  content: '';
+  bottom: 0;
+  @include breakpoint-over('main') {
+    @include mi-shape-triangle(up, 10px, get-color('white'));
+  }
+}

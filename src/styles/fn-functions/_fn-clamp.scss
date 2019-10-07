@@ -1,0 +1,11 @@
+// # ========= --- Clamp Function --- ========== # \\
+
+@function fn-clamp($value, $min, $max) {
+  @return if($value > $max, $max, if($value < $min, $min, $value));
+}
+
+/*
+EXAMPLE ->
+$pc: percentage(clamp($value, 0, 100));
+$darkColor: darken($color, $pc);
+*/

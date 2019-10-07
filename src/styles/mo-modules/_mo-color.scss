@@ -1,0 +1,101 @@
+// # ========= --- Color Styles --- ========== # \\
+
+@each $brand-name,
+$brand-color in get-colors() {
+  .mo-color-bg-#{$brand-name} {
+    background-color: get-color($brand-name);
+  }
+}
+
+@each $brand-name,
+$brand-color in get-colors() {
+  .mo-color-fill-#{$brand-name} {
+    fill: get-color($brand-name);
+    [class^="st"] {
+      fill: get-color($brand-name);
+    }
+  }
+}
+
+@each $brand-name,
+$brand-color in get-colors() {
+  .mo-color-stroke-#{$brand-name} {
+    stroke: get-color($brand-name);
+    [class^="st"] {
+      stroke: get-color($brand-name);
+    }
+  }
+}
+
+@each $brand-name,
+$brand-color in get-colors() {
+  .mo-color-fill-#{$brand-name} {
+    fill: get-color($brand-name);
+  }
+}
+
+@each $brand-name,
+$brand-color in get-colors() {
+  .mo-color-text-#{$brand-name} {
+    color: get-color($brand-name);
+  }
+}
+
+@each $brand-name,
+$brand-color in get-colors() {
+  @each $direction-name in ("all", "bottom", "top", "right", "left", "vertical", "horizontal") {
+    .mo-color-border-#{$direction-name}-#{$brand-name}-size1 {
+      border: 1px solid get-color($brand-name);
+    }
+    .mo-color-border-#{$direction-name}-#{$brand-name}-size2 {
+      border: 2px solid get-color($brand-name);
+    }
+    .mo-color-border-#{$direction-name}-#{$brand-name}-size3 {
+      border: 3px solid get-color($brand-name);
+    }
+    .mo-color-border-#{$direction-name}-#{$brand-name}-size4 {
+      border: 4px solid get-color($brand-name);
+    }
+    .mo-color-border-#{$direction-name}-#{$brand-name}-size5 {
+      border: 5px solid get-color($brand-name);
+    }
+  }
+}
+
+[class*="mo-color-border-"].is-rounded,	
+[class*="mo-color-bg-"].is-rounded {	
+  border-radius: get-config('border-radius');	
+} 
+
+[class*="mo-color-border-"].is-rounded-full,	
+[class*="mo-color-bg-"].is-rounded-full {
+  border-radius: 100%;	
+} 
+
+[class*="mo-color-border-left"] {
+  border-right: none;
+  border-top: none;
+  border-bottom: none;
+}
+
+[class*="mo-color-border-bottom"] {
+  border-left: none;
+  border-top: none;
+  border-right: none;
+}
+
+[class*="mo-color-border-top"] {
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+}
+
+[class*="mo-color-border-vertical"] {
+  border-left: none;
+  border-right: none;
+}
+
+[class*="mo-color-border-horizontal"] {
+  border-top: none;
+  border-bottom: none;
+}

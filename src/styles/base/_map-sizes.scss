@@ -1,0 +1,29 @@
+// # ========= --- Sizes Variable Map --- ========== # \\
+
+// DESCRIPTION -> Create-size-map takes multiplier, floor, and ceiling arguments. If no floor or ceiling is passed
+// then the ceiling and floor will be based on the default ceiling and floor located in the $map-config variable map.
+// If a ceiling or floor are passed in multiplier should always be 1.
+
+$map-sizes: (
+  'base'         : (create-size-map(1)),
+  'position'     : (create-size-map(2)),
+  'spacing'      : (create-size-map(1, .2em, 3em)),
+  'border'       : (create-size-map(.4)),
+  'btn'          : (create-size-map(10)),
+  'fonts'        : (create-size-map(1, .6em, 3em)),
+  'shadows'      : (create-size-map(.3)),
+  'icons'        : (create-size-map(1)),
+  'logo'         : (create-size-map(.75)),
+  'nav-slideout' : (create-size-map(7)),
+  'divider'      : (create-size-map(1, .25em, .8em)),
+  'tracking'     : (create-size-map(1, 0em, .1em)),
+  'wrappers'     : (create-size-map(50)),
+  'col-widths'   : (create-size-map(30, $size-prefix: "width")),
+  'counter'      : (create-size-map(1)),
+  'modal'        : (create-size-map(1, 10em, 75em)),
+  'gutter'       : (create-size-map(1)),
+  'grid-gaps'    : (create-size-map(.5)),
+  'panel'        : (create-size-map(20)),
+  'field'        : (create-size-map(12)),
+  'container'    : (create-size-map(1, 10em, 100))
+);

@@ -1,0 +1,13 @@
+// # # # # # # # # # # # # # # # # # # # # # # # # # # #  \\
+// ***************** CONSTANTS for colors *************** \\
+// # # # # # # # # # # # # # # # # # # # # # # # # # # #  \\
+
+@import "../base/alpha-base";
+
+$updated-map-colors: append(get-colors(), none 'none');
+
+:export {
+  @each $name, $value in $updated-map-colors {
+    #{$name}: #{$value};
+  }
+}

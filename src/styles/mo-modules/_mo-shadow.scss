@@ -1,0 +1,9 @@
+// # ========= --- Shadowing --- ========== # \\
+
+.mo-shadow-dropdown {
+  @include mi-shadow('bottom', $blur-size: 'size2');
+}
+
+.mo-shadow-modal {
+  @include mi-shadow('all', $blur-size: 'size3');
+}

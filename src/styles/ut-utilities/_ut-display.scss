@@ -1,0 +1,17 @@
+// # ========= --- Display Utility --- ========== # \\
+
+.ut-display-block {
+  @include mi-display(block);
+}
+
+.ut-display-inline {
+  @include mi-display(inline);
+}
+
+.ut-display-inline-block {
+  @include mi-display(inline-block);
+}
+
+.ut-display-flex {
+  @include mi-display(flex);
+}

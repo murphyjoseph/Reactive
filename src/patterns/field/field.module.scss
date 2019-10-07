@@ -1,0 +1,165 @@
+@import '../../styles/base/_alpha-base';
+@import '../../styles/mi-mixins/alpha-mixins';
+@import '../../styles/theming/theming.module.css.scss';
+
+$local-radio-size: 11px;
+$local-checkbox-size: 13px;
+
+%checkbox-radio {
+  @include mi-position('center');
+  content: "";
+  position: absolute;
+}
+
+// # ========= ---  FIELD STYLES--- ========== # \\
+
+$local-border-size: 2px;
+$local-border-radius: .5em;
+$local-padding-regular: get-size('size3', 'spacing')/2;
+$local-padding-small: get-size('size1', 'spacing');
+
+.field-wrapper {
+  display: block;
+  width: 100%;
+  position: relative;
+}
+
+.field-input {
+  border: $local-border-size solid get-color('grey-light-1');
+  border-radius: 0;
+  outline: 1px solid transparent;
+}
+
+.field-input-is-full {
+  width: 100%;
+}
+
+.ns-field-text,
+.ns-field-textarea {
+  .field-input {
+    padding: $local-padding-regular;
+  }
+}
+
+.ns-field-radio,
+.ns-field-checkbox {
+  .field-input {
+    visibility: hidden;
+    position: absolute;
+  }
+}
+
+// SELECT STYLES
+.ns-field-select {
+  .field-input {
+    padding-right: get-size('size5', 'spacing');
+    padding-left: $local-padding-regular;
+    padding-top: $local-padding-regular;
+    padding-bottom: $local-padding-regular;
+    appearance: none;
+  }
+  .field-chevron {
+    pointer-events: none;
+  }
+}
+
+// RADIO STYLES
+.ns-field-radio {
+  .field-input-radio {
+    position: relative;
+    width: $local-radio-size;
+    height: $local-radio-size;
+    &:before {
+      @extend %checkbox-radio;
+      border-radius: 100%;
+      border: 1px solid get-color('grey');
+      background: get-color('white');
+      height: $local-radio-size;
+      width: $local-radio-size;
+    }
+  }
+  .field-input:checked ~ .field-input-radio {
+    &:after {
+      @extend %checkbox-radio;
+      border-radius: 100%;
+      background: get-color('primary');
+      height: $local-radio-size - 4;
+      width: $local-radio-size - 4;
+    }
+  }
+}
+
+// CHECKBOX STYLES
+.ns-field-checkbox {
+  .field-input-checkbox {
+    position: relative;
+    width: $local-radio-size;
+    height: $local-radio-size;
+    &:before {
+      @extend %checkbox-radio;
+      border: 1px solid get-color('grey');
+      border-radius: 2px;
+      background: get-color('white');
+      height: $local-checkbox-size;
+      width: $local-checkbox-size;
+    }
+  }
+  .field-input:checked ~ .field-input-checkbox {
+    &:after {
+      content: "";
+      position: absolute;
+      top: 3px;
+      left: 2px;
+      transform: rotate(-45deg);
+      height: $local-checkbox-size - 9;
+      width: $local-checkbox-size - 5;
+      border-left: 2px solid get-color('primary');
+      border-bottom: 2px solid get-color('primary');
+    }
+  }
+}
+
+// PADDING CHANGES
+
+.ns-field-text.ns-field-thin,
+.ns-field-textarea.ns-field-thin {
+  .field-input {
+    padding: $local-padding-regular/2;
+  }
+}
+
+.ns-field-select.ns-field-thin {
+  .field-input {
+    padding-right: get-size('size5', 'spacing');
+    padding-left: $local-padding-regular/2;
+    padding-top: $local-padding-regular/2;
+    padding-bottom: $local-padding-regular/2;
+  }
+}
+
+// MIN MAX WIDTH SETTINGS
+
+@each $key, $value in get-sizes('field') {
+  .field-input-min-width-#{$key} {
+    min-width: $value;
+  }
+}
+
+@each $key, $value in get-sizes('field') {
+  .field-input-max-width-#{$key} {
+    max-width: $value;
+  }
+}
+
+@each $key, $value in get-sizes('field') {
+  .field-input-min-height-#{$key} {
+    min-height: $value;
+  }
+}
+
+@each $key, $value in get-sizes('field') {
+  .field-input-max-height-#{$key} {
+    height: 100%;
+    max-height: $value;
+  }
+}

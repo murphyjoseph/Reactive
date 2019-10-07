@@ -1,0 +1,23 @@
+// # ========= --- Breakpoints --- ========== # \\
+
+// DESCRIPTION -> See the _map-breakpoints.scss variables partial to edit/add breakpoints.
+
+@mixin breakpoint-over($query) {
+  @each $breakpoint, $size in $map-breakpoints {
+    @if $breakpoint == $query {
+      @media all and (min-width: $size) {
+        @content;
+      }
+    }
+  }
+}
+
+@mixin breakpoint-under($query) {
+  @each $breakpoint, $size in $map-breakpoints {
+    @if $breakpoint == $query {
+      @media all and (max-width: $size - 1px) {
+        @content;
+      }
+    }
+  }
+}

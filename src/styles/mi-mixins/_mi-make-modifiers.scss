@@ -1,0 +1,48 @@
+// # ========= --- Make Modifiers Mixin --- ========== # \\
+
+// DESCRIPTION -> This mixin will create the modifiers of xxsm, xsm, sm, etc.
+
+@mixin mi-make-modifiers($variable-map: $map-sizes, $properties...) {
+
+  @each $size, $size-value in $variable-map {
+    &-#{$size} {
+      @each $property in $properties {
+        #{$property}: $size-value;
+      }
+    }
+  }
+
+}
+
+@mixin mi-make-modifiers($variable-map: $map-sizes, $properties...) {
+
+  @each $size, $size-value in $variable-map {
+    @each $breakpoint-label, $breakpoint-size in $map-breakpoints {
+      @include breakpoint-under($breakpoint-label) {
+        &-#{$size}-under-#{$breakpoint-label} {
+          @each $property in $properties {
+            #{$property}: $size-value;
+          }
+        }
+      }
+    }
+  }
+
+}
+
+@mixin mi-make-modifiers($variable-map: $map-sizes, $properties...) {
+
+  @each $size, $size-value in $variable-map {
+    @each $breakpoint-label, $breakpoint-size in $map-breakpoints {
+      @include breakpoint-over($breakpoint-label) {
+        &-#{$size}-over-#{$breakpoint-label} {
+          @each $property in $properties {
+            #{$property}: $size-value;
+          }
+        }
+      }
+    }
+  }
+
+}
+

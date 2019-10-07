@@ -1,0 +1,109 @@
+// # ========= --- Position Mixin --- ========== # \\
+
+@mixin mi-position($position, $breakpoint: null) {
+
+  $is-valid-position: fn-validate-position($position);
+  $is-valid-breakpoint: fn-validate-breakpoint($breakpoint);
+
+  // If a breakpoint is set use it otherwise dont
+  @if $breakpoint {
+    @include breakpoint-over($breakpoint) {
+      @if $position == 'center' {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      } @else if $position == 'right' {
+        right: 0;
+      } @else if $position == 'left' {
+        left: 0;
+      } @else if $position == 'center-vertical' {
+        top: 50%;
+        transform: translateY(-50%);
+      } @else if $position == 'center-vertical-left' {
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+      } @else if $position == 'center-vertical-right' {
+        top: 50%;
+        transform: translateY(-50%);
+        right: 0;
+      } @else if $position == 'center-horizontal' {
+        left: 50%;
+        transform: translate(-50%, 0);
+      } @else if $position == 'center-block' {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      } @else if $position == 'top' {
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, 0);
+      } @else if $position == 'top-left' {
+        top: 0;
+        left: 0;
+      } @else if $position == 'top-right' {
+        top: 0;
+        right: 0;
+      }  @else if $position == 'bottom' {
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, 0);
+      } @else if $position == 'bottom-left' {
+        bottom: 0;
+        left: 0;
+      } @else if $position == 'bottom-right' {
+        bottom: 0;
+        right: 0;
+      }
+    }
+  } @else {
+    @if $position == 'center' {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    } @else if $position == 'right' {
+      right: 0;
+    } @else if $position == 'left' {
+      left: 0;
+    } @else if $position == 'center-vertical' {
+      top: 50%;
+      transform: translateY(-50%);
+    } @else if $position == 'center-vertical-left' {
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+    } @else if $position == 'center-vertical-right' {
+      top: 50%;
+      transform: translateY(-50%);
+      right: 0;
+    } @else if $position == 'center-horizontal' {
+      left: 50%;
+      transform: translate(-50%, 0);
+    } @else if $position == 'top' {
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, 0);
+    } @else if $position == 'top-left' {
+      top: 0;
+      left: 0;
+    } @else if $position == 'top-right' {
+      top: 0;
+      right: 0;
+    } @else if $position == 'center-block' {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    } @else if $position == 'bottom' {
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%, 0);
+    } @else if $position == 'bottom-left' {
+      bottom: 0;
+      left: 0;
+    } @else if $position == 'bottom-right' {
+      bottom: 0;
+      right: 0;
+    }
+  }
+
+}

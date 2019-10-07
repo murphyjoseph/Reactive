@@ -1,0 +1,31 @@
+// # ========= --- Wrapper Styles --- ========== # \\
+
+.st-wrapper {
+  position: relative;
+  display: block;
+}
+
+@each $size-label, $size-value in get-sizes('wrappers') {
+  .st-wrapper--max-#{$size-label} {
+    max-width: $size-value;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.st-wrapper--max-main {
+  max-width: get-size(get-config('main-section-max-width'), 'wrappers');
+  margin: 0 auto;
+}
+
+@each $breakpoint-name, $breakpoint-size in $map-breakpoints {
+  @include breakpoint-over($breakpoint-name) {
+    @each $size-label, $size-value in get-sizes('wrappers') {
+      .st-wrapper--max-#{$size-label}-over-#{$breakpoint-name} {
+        max-width: $size-value;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
+}

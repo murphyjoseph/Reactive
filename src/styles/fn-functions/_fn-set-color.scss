@@ -1,0 +1,12 @@
+// # ========= --- Set Color --- ========== # \\
+
+// DESCRIPTION -> Sets the color to white if the color passed in is dark and sets color to
+// black if the color is too light.
+
+@function fn-set-color($color) {
+  @if (lightness($color) > 50) {
+    @return get-color('black');
+  } @else {
+    @return get-color('white');
+  }
+}

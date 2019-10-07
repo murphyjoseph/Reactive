@@ -1,0 +1,9 @@
+// # ========= --- Shadow --- ========== # \\
+
+@each $direction in ('all', 'bottom', 'bottom-left', 'bottom-right', 'horizontal', 'left', 'right', 'top', 'top-left', 'top-right', 'vertical') {
+  @each $val-key, $val-size in get-sizes('shadows') {
+    .ut-shadow-#{$direction}-#{$val-key} {
+      @include mi-shadow($direction, $blur-size: $val-key);
+    }
+  }
+}

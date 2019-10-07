@@ -1,0 +1,9 @@
+// # ========= --- Standard Flex Mixin --- ========== # \\
+
+// This mixin is for atom button to correct an issue where some buttons dont have flexible width so it has to placed
+// on both the atom btn tag and .mo-btn
+
+@mixin mi-standard-flex() {
+  max-width: get-size('size6', 'btn');
+  width: 100%;
+}

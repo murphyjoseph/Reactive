@@ -1,0 +1,191 @@
+@import '../../styles/base/_alpha-base';
+
+// # ========= ---  TEXT STYLES --- ========== # \\
+// DESCRIPTION -> This generates the styles located in $map-config-text, examples of generated classes are .text-heading, .text-subheading. etc...
+
+@each $text-key,
+$text-type in $map-config-text {
+  @each $property,
+  $style in get-font-type($text-type) {
+    .text-#{$text-key} {
+      @if $property=='font-size' {
+        $style: get-size($style, fonts);
+      }
+      #{$property}: #{$style};
+    }
+  }
+}
+
+@each $size-label,
+$size-value in get-sizes('fonts') {
+  .text-#{$size-label} {
+    font-size: $size-value;
+  }
+}
+
+.text-btn {
+  font-weight: 700;
+}
+
+// GENERAL TEXT OPTIONS
+.text-crossed-out {
+  text-decoration: line-through;
+}
+
+.text-nowrap {
+  white-space: nowrap;
+}
+
+.text-underlined {
+  text-decoration: underline;
+}
+
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+.text-italic {
+  font-style: italic;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-bold {
+  font-weight: 700;
+}
+
+.text-thin {
+  font-weight: 400;
+}
+
+// WORD BREAKING
+.text-word-break-all {
+  word-break: break-all;
+}
+
+.text-word-break-word {
+  word-break: break-word;
+}
+
+// CHARACTER WIDTH SETTINGS
+.text-character-width-15 {
+  max-width: 15ch;
+}
+
+.text-character-width-20 {
+  max-width: 20ch;
+}
+
+.text-character-width-40 {
+  max-width: 40ch;
+}
+
+.text-character-width-60 {
+  max-width: 60ch;
+}
+
+.text-character-width-80 {
+  max-width: 80ch;
+}
+
+.text-character-width-100 {
+  max-width: 100ch;
+}
+
+// CUSTOM TEXT SETTINGS
+// to resolve disabled inputs preventing click events from firing.
+// https://stackoverflow.com/a/22845845/7141930
+.text-input {
+  &.is-disabled {
+    pointer-events: none;
+  }
+}
+
+.text-headingone-tiny {
+  font-size: get-size('size8', 'fonts');
+}
+
+.text-headingone-big {
+  font-size: get-size('size12', 'fonts');
+}
+
+.text-headingtwo-tiny {
+  font-size: get-size('size7', 'fonts');
+}
+
+.text-headingtwo-big {
+  font-size: get-size('size9', 'fonts');
+}
+
+.text-headingthree-tiny {
+  font-size: get-size('size5', 'fonts');
+}
+
+.text-headingthree-big {
+  font-size: get-size('size7', 'fonts');
+}
+
+.text-tag-tiny {
+  font-size: get-size('size2', 'fonts');
+}
+
+.text-tag-big {
+  font-size: get-size('size4', 'fonts');
+}
+
+.text-copy-tiny {
+  font-size: get-size('size2', 'fonts');
+}
+
+.text-copy-big {
+  font-size: get-size('size4', 'fonts');
+}
+
+.text-copy-title-tiny {
+  font-size: get-size('size2', 'fonts');
+}
+
+.text-copy-title-big {
+  font-size: get-size('size4', 'fonts');
+}
+
+.text-description-tiny {
+  font-size: get-size('size1', 'fonts');
+}
+
+.text-description-big {
+  font-size: get-size('size3', 'fonts');
+}
+
+.text-link-tiny {
+  font-size: get-size('size2', 'fonts');
+}
+
+.text-link-big {
+  font-size: get-size('size4', 'fonts');
+}
+
+.text-label-tiny {
+  font-size: get-size('size2', 'fonts');
+}
+
+.text-label-big {
+  font-size: get-size('size4', 'fonts');
+}
+
+.text-sublabel-tiny {
+  font-size: get-size('size1', 'fonts');
+}
+
+.text-sublabel-big {
+  font-size: get-size('size3', 'fonts');
+}
+
+.text-invalid {
+  white-space: nowrap;
+  &.is-tiny {
+    font-size: get-size('size1', 'fonts');
+  }
+}

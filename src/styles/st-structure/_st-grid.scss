@@ -1,0 +1,22 @@
+// # ========= --- CSS Grid Styles --- ========= # \\
+
+// DESCRIPTION -> This partial will incorporate some css-grid functionality.
+
+.st-grid {
+  display: grid;
+}
+
+// Column
+@for $i from 1 through 12 {
+  .st-grid-col-#{$i} {
+    display: grid;
+    grid-template-columns: repeat($i, 1fr);
+  }
+}
+
+// Gaps
+@each $label, $value in get-sizes('grid-gaps') {
+  .st-grid-gap-#{$label} {
+    grid-gap: $value;
+  }
+}

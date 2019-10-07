@@ -1,0 +1,36 @@
+.accordion {
+  color: get-color('black');
+  position: relative;
+}
+
+.accordion__content {
+  color: get-color('black');
+}
+
+.accordion__summary {
+  position: relative;
+  &::-webkit-details-marker {
+    display: none;
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 10px;
+    width: 20px;
+    background: url(https://cl.wantable.com/image/upload/v1554740453/it/icon_plus.svg) no-repeat center center;
+  }
+}
+
+
+.accordion[open] .accordion__summary:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 10px;
+  width: 20px;
+  background: url(https://cl.wantable.com/image/upload/v1554740453/it/icon_minus.svg) no-repeat center center;
+}

@@ -1,0 +1,106 @@
+// # ========= --- Validate Params in Mixins --- ========== # \\
+
+// TODO - Come back and see if these functions can be merged and done more efficiently.
+
+@function fn-validate-type-spacing($validate-type) {
+  @if $validate-type == null {
+    @return '';
+  }
+  $valid-types: padding, margin;
+  @each $valid-type in $valid-types {
+    @if $valid-type == $validate-type {
+      @return true;
+    }
+  }
+  @error "@fn -> fn-validate-type-spacing | #{$validate-type} is not a valid spacing type.";
+}
+
+@function fn-validate-type-alignment($validate-type) {
+  @if $validate-type == null {
+    @return '';
+  }
+  $valid-types: vertical, text;
+  @each $valid-type in $valid-types {
+    @if $valid-type == $validate-type {
+      @return true;
+    }
+  }
+  @error "@fn -> fn-validate-type-alignment | #{$validate-type} is not a valid alignment type.";
+}
+
+@function fn-validate-position($validate-position) {
+  @if $validate-position == null {
+    @return '';
+  }
+  @each $valid-position-direction in get-direction-positions() {
+    @if $valid-position-direction == $validate-position {
+      @return true;
+    }
+  }
+  @error "@fn -> fn-validate-position | #{$validate-position} is not a valid position.";
+}
+
+@function fn-validate-direction($validate-direction) {
+  @if $validate-direction == null {
+    @return '';
+  }
+  $valid-directions: get-directions();
+  @each $valid-direction in $valid-directions {
+    @if $valid-direction == $validate-direction {
+      @return true;
+    }
+  }
+  @error "@fn -> fn-validate-direction | #{$validate-direction} is not a valid direction.";
+}
+
+@function fn-validate-color($validate-color) {
+  @if $validate-color == null {
+    @return '';
+  }
+  $valid-colors: map-keys(get-colors());
+  @each $valid-color in $valid-colors {
+    @if $valid-color == $validate-color {
+      @return true;
+    }
+  }
+  @error "@fn -> fn-validate-color | #{$validate-color} is not a valid color.";
+}
+
+@function fn-validate-breakpoint($validate-breakpoint) {
+  @if $validate-breakpoint == null {
+    @return '';
+  }
+  $valid-breakpoints: map-keys($map-breakpoints);
+  @each $valid-breakpoint in $valid-breakpoints {
+    @if $valid-breakpoint == $validate-breakpoint {
+      @return true;
+    }
+  }
+  @error "@fn -> fn-validate-breakpoint | #{$validate-breakpoint} is not a valid breakpoint.";
+}
+
+@function fn-validate-size($validate-size) {
+  @if $validate-size == null {
+    @return '';
+  }
+  $valid-sizes: get-size-labels();
+  @each $valid-size in $valid-sizes {
+    @if $valid-size == $validate-size {
+      @return true;
+    }
+  }
+  @error "@fn -> fn-validate-size | #{$validate-size} is not a valid size.";
+}
+
+@function fn-validate-display($validate-display) {
+  @if $validate-display == null {
+    @return '';
+  }
+  $valid-displays: inline, block, inline-block, flex, none, initial;
+  @each $valid-display in $valid-displays {
+    @if $valid-display == $validate-display {
+      @return true;
+    }
+  }
+  @error "@fn -> fn-validate-display | #{$validate-display} is not a valid display.";
+}

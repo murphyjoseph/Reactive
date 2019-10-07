@@ -1,0 +1,13 @@
+// # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # \\
+// ***************** CONSTANTS for position directions *************** \\
+// # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # \\
+
+@import "../base/alpha-base";
+
+$updated-map-direction-positions: append(get-direction-positions(), none 'none');
+
+:export {
+  @each $name, $value in $updated-map-direction-positions {
+    #{$name}: #{$name};
+  }
+}

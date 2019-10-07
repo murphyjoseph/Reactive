@@ -1,0 +1,12 @@
+// # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # \\
+// ***************** CONSTANTS for spacing sizes *************** \\
+// # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # \\
+
+@import "../base/alpha-base";
+
+:export {
+  @each $name,
+  $value in get-sizes('spacing') {
+    #{$name}: #{$value};
+  }
+}

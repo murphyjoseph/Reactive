@@ -1,0 +1,9 @@
+// # ========= --- Spacing Styles --- ========== # \\
+
+.mo-spacing {
+  @each $key, $value in $map-config-spacing {
+    & + .mo-spacing--#{$key}, & + & .mo-spacing--#{$key} {
+      @include mi-spacing('margin', 'top', $value);
+    }
+  }
+}

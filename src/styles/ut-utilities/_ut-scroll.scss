@@ -1,0 +1,15 @@
+// # ========= --- Scroll Utility --- ========== # \\
+
+.ut-scroll-wrapper {
+  position: relative;
+}
+
+.ut-scroll__horizontal {
+  overflow-x: scroll;
+  white-space: nowrap;
+}
+
+.ut-scroll__vertical {
+  overflow-y: scroll;
+  white-space: nowrap;
+}

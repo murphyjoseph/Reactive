@@ -1,0 +1,136 @@
+// # ========= --- Shape Mixin --- ========== # \\
+
+@mixin mi-shape-rectangle($width, $height, $color) {
+  width: $width;
+  height: $height;
+  background: $color;
+}
+
+@mixin mi-shape-parallelogram($width, $height, $skew, $color) {
+  @include mi-shape-rectangle($width, $height, $color);
+  background: $color;
+  transform: skew($skew);
+}
+
+@mixin mi-shape-square($size, $color) {
+  @include mi-shape-rectangle($size, $size, $color);
+}
+
+@mixin mi-shape-circle($size, $color: null) {
+  width: $size;
+  height: $size;
+  position: relative;
+  border-radius: $size / 2;
+  @if $color != null {
+    background-color: $color;
+  }
+}
+
+@mixin mi-shape-oval($width, $height, $color) {
+  background: $color;
+  border-radius: #{$width} / #{$height};
+  height: $height;
+  width: $width;
+}
+
+@mixin mi-shape-triangle($direction, $size, $color: get-color('white')) {
+  width: 0;
+  height: 0;
+
+  @if $direction == 'up' {
+    border-right: $size solid transparent;
+    border-bottom: $size * 1 solid $color;
+    border-left: $size solid transparent;
+  } @else if $direction == 'down' {
+    border-top: $size * 1 solid $color;
+    border-right: $size solid transparent;
+    border-left: $size solid transparent;
+  } @else if $direction == 'left' {
+    border-top: $size solid transparent;
+    border-right: $size * 1 solid $color;
+    border-bottom: $size solid transparent;
+  } @else if $direction == 'right' {
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+    border-left: $size * 1 solid $color;
+  }
+}
+
+@mixin mi-shape-corner-triangle($corner, $size, $color) {
+  width: 0;
+  height: 0;
+
+  @if $corner == 'top-left' {
+    border-top: $size solid $color;
+    border-right: $size solid transparent;
+  } @else if $corner == 'top-right' {
+    border-top: $size solid $color;
+    border-left: $size solid transparent;
+  } @else if $corner == 'bottom-left' {
+    border-right: $size solid transparent;
+    border-bottom: $size solid $color;
+  } @else if $corner == 'bottom-right' {
+    border-bottom: $size solid $color;
+    border-left: $size solid transparent;
+  }
+}
+
+@mixin mi-shape-trapezoid($width, $color) {
+  width: $width;
+  height: 0;
+  border-right: $width / 2 solid transparent;
+  border-bottom: $width solid $color;
+  border-left: $width / 2 solid transparent;
+  box-sizing: content-box; //If you have 'box-sizing:border-box' the trapezoid doesn't work.
+}
+
+@mixin mi-shape-chevron($direction, $width, $height, $skew, $color) {
+  position: relative;
+  width: $width;
+  height: $height;
+  &:before, &:after {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background: $color;
+    content: '';
+  }
+  &:before {
+    left: 0;
+    transform: skew(0deg, $skew);
+  }
+  &:after {
+    right: 0;
+    transform: skew(0deg, -$skew);
+  }
+}
+
+@mixin mi-shape-hexagon($width, $height, $color){
+  height: $height;
+  padding: 0 $width;
+  background: $color;
+  font-size: $height / 2;
+  display: inline-block;
+  position: relative;
+  line-height: 1.8;
+
+  &:before, &:after {
+    position: absolute;
+    content: "";
+    height: 0;
+    width: 0;
+    top: 0;
+    border-top: $height / 2 solid transparent;
+    border-bottom: $height / 2  solid transparent;
+    transform:rotateY(180deg);
+  }
+  &:before {
+    left: 100%;
+    border-right: $height / 2 solid $color;
+  }
+  &:after {
+    right: 100%;
+    border-left: $height / 2 solid $color;
+  }
+}

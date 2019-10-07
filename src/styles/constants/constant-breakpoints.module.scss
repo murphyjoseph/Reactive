@@ -1,0 +1,11 @@
+// # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # \\
+// ***************** CONSTANTS for breakpoints *************** \\
+// # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # \\
+@import "../base/alpha-base";
+$updated-map-breakpoints: append($map-breakpoints, all 'all');
+:export {
+  @each $name,
+  $value in $updated-map-breakpoints {
+    #{$name}: #{$value};
+  }
+}

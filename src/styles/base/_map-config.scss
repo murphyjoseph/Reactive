@@ -1,0 +1,115 @@
+// # ========= --- Settings Variable Map --- ========== # \\
+
+// DESCRIPTION -> These variable maps will be able to completely change the look and feel of the site.
+
+$map-config: (
+  'size-labels'           : ('size1', 'size2', 'size3', 'size4', 'size5', 'size5', 'size6', 'size7', 'size8', 'size9', 'size10', 'size11', 'size12'),
+  'size-floor'            : .25em,
+  'size-ceiling'          : 3em,
+  'branding-labels'       : ('global', 'primary', 'secondary', 'neutral', 'warning', 'info', 'disabled', 'inactive'),
+  'colors'                : ('global'              : hsla(0, 0%, 15%, 1),
+                             'global-light-1'      : hsla(0, 0%, 25%, 1),
+                             'global-dark-1'       : hsla(0, 0%, 5%, 1),
+                             'primary'             : hsla(200, 37%, 52%, 1),
+                             'primary-light-1'     : hsla(200, 37%, 60%, 1),
+                             'primary-dark-1'      : hsla(200, 37%, 44%, 1),
+                             'success'             : hsla(83, 46%, 47%, 1),
+                             'success-light-1'     : hsla(83, 46%, 58%, 1),
+                             'success-dark-1'      : hsla(83, 46%, 36%, 1),
+                             'disabled'            : hsla(0, 0%, 87%, 1),
+                             'disabled-light-1'    : hsla(0, 0%, 95%, 1),
+                             'disabled-dark-1'     : hsla(0, 0%, 76%, 1),
+                             'warning'             : hsla(7, 66%, 57%, 1),
+                             'warning-light-1'     : hsla(7, 66%, 72%, 1),
+                             'warning-dark-1'      : hsla(7, 66%, 46%, 1),
+                             'info'                : hsla(39, 100%, 71%, 1),
+                             'info-light-1'        : hsla(39, 100%, 80%, 1),
+                             'info-dark-1'         : hsla(39, 100%, 62%, 1),
+                             'white'               : hsla(0, 100%, 100%, 1),
+                             'black'               : hsla(0, 0%, 0%, 1),
+                             'grey'                : hsla(0, 0%, 60%, 1),
+                             'grey-light-1'        : hsla(0, 0%, 87%, 1),
+                             'grey-light-2'        : hsla(0, 0%, 93%, 1),
+                             'grey-light-3'        : hsla(0, 0%, 95%, 1),
+                             'grey-dark-1'         : hsla(0, 0%, 33%, 1),
+                             'grey-dark-2'         : hsla(0, 0%, 25%, 1),
+                             'smoke'               : hsla(0, 100%, 100%, 0.75),
+                             'transparent'         : hsla(0, 23%, 3%, 0),
+                             'shadow'              : hsla(0, 0%, 30%, 0.3)),
+  'color-hover-change'    : 5%,
+  'color-lighten'         : 5%,
+  'color-darken'          : 5%,
+  'color-transparentize'  : .2,
+  'border-radius'         : 1.5em,
+  'font-types'            : ('level1' : ('font-family': (sans-serif), 'font-size': 'size10'),
+                             'level2' : ('font-family': (sans-serif), 'font-size': 'size8'),
+                             'level3' : ('font-family': (sans-serif), 'font-size': 'size6'),
+                             'level4' : ('font-family': (sans-serif), 'font-size': 'size3'),
+                             'level5' : ('font-family': (sans-serif), 'font-size': 'size2')),
+  'mobile-breakpoint'     : 'breakpoint6',
+  'main-section-max-width': 'breakpoint6',
+  'em-breakpoints'        : ('breakpoint3': 13px,
+                             'breakpoint4': 13px,
+                             'breakpoint6': 13px),
+  'directions'            : ('all', 'bottom', 'bottom-left', 'bottom-right', 'horizontal', 'left', 'right', 'top', 'top-left', 'top-right', 'vertical', 'center', 'middle'),
+  'direction-positions'   : ('center', 'center-vertical', 'center-vertical-left', 'center-vertical-right', 'center-horizontal', 'center-block', 'top', 'top-right', 'top-left', 'left', 'right', 'bottom', 'bottom-right', 'bottom-left' )
+);
+
+// CSS VAR COLORS
+
+:root {
+  @each $name, $color in map-fetch($map-config, 'colors') {
+    --color-#{$name}: #{$color};
+  }
+}
+
+// TEXT LEVELS
+
+$map-config-text: (
+  'headingone'   : 'level1',
+  'headingtwo'   : 'level2',
+  'headingthree' : 'level3',
+  'copy'         : 'level4',
+  'tag'          : 'level4',
+  'navLink'      : 'level4',
+  'copyTitle'    : 'level4',
+  'description'  : 'level5',
+  'list'         : 'level4',
+  'btn'          : 'level4',
+  'link'         : 'level4',
+  'label'        : 'level4',
+  'sublabel'     : 'level5',
+  'input'        : 'level4',
+  'placeholder'  : 'level4',
+  'icon'         : 'level1',
+  'option'       : 'level4',
+  'invalid'      : 'level4',
+  'counter'      : 'level5',
+  'figcaption'   : 'level4'
+);
+
+// SPACING BETWEEN TEXT PATTERNS
+
+$map-config-spacing: (
+  base        : 'size3',
+  nav-spacing : 'size3',
+  heading     : 'size3',
+  subheading  : 'size3',
+  copy        : 'size2',
+  btn         : 'size4',
+  input       : 'size4',
+  link        : 'size4',
+  link-main   : 'size4',
+  link-phone  : 'size4',
+  alt-heading : 'size2',
+  field       : 'size3',
+  img         : 'size3',
+  icon-flag   : 'size3',
+  icon-list   : 'size3',
+  divider     : 'size3',
+  col         : 'size8',
+  container   : 'size8',
+  section     : 'size8',
+  list        : 'size2',
+  figcaption  : 'size1'
+);

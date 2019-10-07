@@ -1,0 +1,28 @@
+// # ========= --- Visually Hidden Mixin --- ========== # \\
+
+@mixin mi-visually-hidden($breakpoint: null) {
+
+  $is-valid-breakpoint: fn-validate-breakpoint($breakpoint);
+
+  @if $breakpoint != null {
+    @include breakpoint-over($breakpoint) {
+      margin: -1px;
+      padding: 0;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      clip: rect(0, 0, 0, 0);
+      position: absolute;
+    }
+  } @else {
+    margin: -1px;
+    padding: 0;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip: rect(0, 0, 0, 0);
+    position: absolute;
+  }
+}

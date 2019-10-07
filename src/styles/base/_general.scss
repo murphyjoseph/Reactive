@@ -1,0 +1,87 @@
+// # ========= --- General Styles --- ========== # \\
+
+html, body {
+  font-smooth: auto;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-variant: normal;
+  font-size: 100%;
+  font-style: normal;
+  vertical-align: baseline;
+  font-size: 100%;
+  @each $key, $value in map-get($map-config, 'em-breakpoints') {
+    @if $key == "base" {
+      font-size: $value;
+    } @else {
+      @include breakpoint-over($key) {
+        font-size: $value;
+      }
+    }
+  }
+}
+
+body {
+  display: flex; /* Make the body element a flex container */
+  flex-direction: column; /* Change the flexbox axis from the default which is row*/
+  -webkit-overflow-scrolling: touch;
+}
+
+#root {
+  flex: 1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+}
+
+h1, h2, h3, h4 ,h5 ,h6, a, button {
+  line-height: 1.1;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  line-height: 1.4;
+}
+
+input, select, textarea {
+  line-height: 1.5;
+  background-color: transparent;
+}
+
+button {
+  border-radius: 0;
+  border: none;
+  &:focus {
+    outline: none;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: get-color('black');
+}
+
+iframe {
+  display: block;
+  width: 100%;
+  border: none;
+}
+
+ul, li {
+  list-style: none;
+}
+
+label {
+  display: block;
+}

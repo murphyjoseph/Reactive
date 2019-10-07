@@ -1,0 +1,35 @@
+// # ========= --- Spacing Mixin --- ========== # \\
+
+@mixin mi-spacing($type, $direction, $size, $breakpoint: null) {
+  // Convert abbreviated directoin into full word to be placed into property
+  $spacing-directions: fn-direction($direction);
+
+  // Validate arguments --> will return error in terminal if they are incorrect
+  $is-valid-type: fn-validate-type-spacing($type);
+  $is-valid-direction: fn-validate-direction($direction);
+  $is-valid-size: fn-validate-size($size);
+  $is-valid-breakpoint: fn-validate-breakpoint($breakpoint);
+
+  // Check if breakpoint is used otherwise use non-breakpoint spacing
+  @if $breakpoint {
+    @include breakpoint-over($breakpoint) {
+      @each $spacing-direction in $spacing-directions {
+        // if direction is not all (null) then add dash
+        @if $spacing-direction == null {
+          #{$type}: get-size($size, spacing);
+        } @else {
+          #{$type}-#{$spacing-direction}: get-size($size, spacing);
+        }
+      }
+    }
+  } @else {
+    @each $spacing-direction in $spacing-directions {
+      // if direction is not all (null) then add dash
+      @if $spacing-direction == null {
+        #{$type}: get-size($size, spacing);
+      } @else {
+        #{$type}-#{$spacing-direction}: get-size($size, spacing);
+      }
+    }
+  }
+}

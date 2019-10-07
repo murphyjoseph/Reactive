@@ -1,0 +1,26 @@
+@import '../../styles/base/alpha-base';
+@import '../../styles/mi-mixins/alpha-mixins';
+
+// # ========= ---  DIVIDER STYLES--- ========== # \\
+
+$local-spacing-between-divider: 10px;
+$local-circle-size: 10px;
+
+%divider-circle {
+  height: $local-circle-size;
+  width: $local-circle-size;
+  border-radius: 50%;
+}
+
+.divider {
+  &:after {
+    @extend %divider-circle;
+    @include mi-position('c-h');
+    top: $local-spacing-between-divider;
+  }
+  &:before {
+    @extend %divider-circle;
+    @include mi-position('c-h');
+    bottom: $local-spacing-between-divider;
+  }
+}

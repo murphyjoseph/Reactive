@@ -1,0 +1,21 @@
+// # ========= --- Hide Things Utility --- ========== # \\
+
+.ut-hide {
+  display: none !important;
+}
+
+@each $breakpoint-label, $breakpoint-size in $map-breakpoints {
+  .ut-hide-over-#{$breakpoint-label} {
+    @include breakpoint-over($breakpoint-label) {
+      display: none !important;
+    }
+  }
+}
+
+@each $breakpoint-label, $breakpoint-size in $map-breakpoints {
+  .ut-hide-under-#{$breakpoint-label} {
+    @include breakpoint-under($breakpoint-label) {
+      display: none !important;
+    }
+  }
+}

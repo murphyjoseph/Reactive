@@ -1,0 +1,17 @@
+// # ========= --- Align Mixin --- ========== # \\
+
+@mixin mi-align($type, $direction, $breakpoint: null) {
+
+  $is-valid-type: fn-validate-type-alignment($type);
+  $is-valid-direction: fn-validate-direction($direction);
+  $is-valid-breakpoint: fn-validate-breakpoint($breakpoint);
+
+  @if $breakpoint {
+    @include breakpoint-over($breakpoint) {
+      #{$type}-align: fn-direction($direction);
+    }
+  } @else {
+    #{$type}-align: fn-direction($direction);
+  }
+
+}

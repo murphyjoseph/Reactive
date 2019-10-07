@@ -1,0 +1,16 @@
+// # ========= --- Display Mixin --- ========== # \\
+
+@mixin mi-display($display, $breakpoint: null) {
+
+  $is-valid-display: fn-validate-display($display);
+  $is-valid-breakpoint: fn-validate-breakpoint($breakpoint);
+
+  @if $breakpoint {
+    @include breakpoint-over($breakpoint) {
+      display: $display;
+    }
+  } @else {
+    display: $display;
+  }
+
+}

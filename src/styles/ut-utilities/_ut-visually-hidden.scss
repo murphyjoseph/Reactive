@@ -1,0 +1,42 @@
+// # ========= --- Visually Hide Things Utility --- ========== # \\
+
+.ut-visually-hidden {
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
+  position: absolute;
+}
+
+@each $breakpoint-label, $breakpoint-size in $map-breakpoints {
+  .ut-visually-hidden-over-#{$breakpoint-label} {
+    @include breakpoint-over($breakpoint-label) {
+      margin: -1px;
+      padding: 0;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      clip: rect(0, 0, 0, 0);
+      position: absolute;
+    }
+  }
+}
+
+@each $breakpoint-label, $breakpoint-size in $map-breakpoints {
+  .ut-visually-hidden-under-#{$breakpoint-label} {
+    @include breakpoint-under($breakpoint-label) {
+      margin: -1px;
+      padding: 0;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      clip: rect(0, 0, 0, 0);
+      position: absolute;
+    }
+  }
+}

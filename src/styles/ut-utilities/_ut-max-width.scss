@@ -1,0 +1,21 @@
+// # ========= --- Max Width Container --- ========== # \\
+
+@each $size-label, $size-value in get-sizes('wrappers') {
+  .ut-max-width-#{$size-label} {
+    max-width: $size-value;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@each $breakpoint-name, $breakpoint-size in $map-breakpoints {
+  @include breakpoint-over($breakpoint-name) {
+    @each $size-label, $size-value in get-sizes('wrappers') {
+      .ut-max-width-#{$size-label}-over-#{$breakpoint-name} {
+        max-width: $size-value;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
+}

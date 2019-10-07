@@ -1,0 +1,11 @@
+// # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # \\
+// ***************** CONSTANTS for grid *************** \\
+// # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # \\
+@import "../base/alpha-base";
+
+:export {
+  @each $name,
+  $value in $map-col-percents {
+    #{$name}: #{$value};
+  }
+}

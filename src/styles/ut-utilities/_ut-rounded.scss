@@ -1,0 +1,13 @@
+// # ========= --- Roundedness Utility --- ========== # \\
+
+.ut-rounded {
+  border-radius: get-config('border-radius');
+}
+
+.ut-rounded-half {
+  border-radius: get-config('border-radius')/2;
+}
+
+.ut-rounded-full {
+  border-radius: 100%;
+}

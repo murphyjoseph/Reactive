@@ -1,0 +1,75 @@
+// # ========= --- Position Utility --- ========== # \\
+
+[class*="ut-position-absolute"],
+.ut-position-absolute {
+  position: absolute;
+}
+
+[class*="ut-position-relative"],
+.ut-position-relative {
+  position: relative;
+}
+
+[class*="ut-position-fixed"],
+.ut-position-fixed {
+  position: fixed;
+}
+
+[class*="ut-position-sticky"],
+.ut-position-sticky {
+  position: sticky;
+}
+
+//center block
+.ut-position-relative-center-block {
+  @include mi-position('center-block');
+}
+
+[class*="ut-position-"] {
+  &.is-responsive {
+    @include breakpoint-under('main') {
+      position: relative;
+      transform: none;
+      left: unset;
+      right: unset;
+      top: unset;
+      bottom: unset;
+    }
+  }
+}
+
+@each $direction-position in get-direction-positions() {
+  .ut-position-absolute-#{$direction-position},
+  .ut-position-fixed-#{$direction-position},
+  .ut-position-sticky-#{$direction-position} {
+    @include mi-position($direction-position);
+  }
+}
+
+// STICKY ADAPTATIONS
+[class*="ut-position-"] {
+  &.ut-position--top-cushion {
+    top: get-size('size2', 'position');
+  }
+  &.ut-position--top-right-cushion {
+    top: get-size('size2', 'position');
+    right: get-size('size2', 'position');
+  }
+  &.ut-position--bottom-cushion {
+    bottom: get-size('size2', 'position');
+  }
+  &.ut-position--bottom-right-cushion {
+    bottom: get-size('size2', 'position');
+    right: get-size('size2', 'position');
+  }
+  &.ut-position-bottom-left-cushion {
+    bottom: get-size('size2', 'position');
+    right: get-size('size2', 'position');
+  }
+  &.ut-position--left-cushion {
+    left: get-size('size2', 'position');
+  }
+  &.ut-position--right-cushion {
+    right: get-size('size', 'position');
+  }
+}

@@ -1,0 +1,17 @@
+@import '../../styles/base/_alpha-base';
+@import '../../styles/mi-mixins/alpha-mixins';
+@import '../../styles/theming/theming.module.css.scss';
+
+// # ========= ---  CONTAINER STYLES--- ========== # \\
+
+@each $key, $value in get-sizes('container') {
+  .container-min-height-#{$key} {
+    min-height: $value;
+  }
+}
+
+@each $key, $value in get-sizes('container') {
+  .container-max-height-#{$key} {
+    max-height: $value;
+  }
+}

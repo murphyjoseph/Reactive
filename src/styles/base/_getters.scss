@@ -1,0 +1,77 @@
+// # ========= --- Getters for Variable Maps --- ========== # \\
+
+// Description -> Use these to access variable maps
+
+@function get-sizes($type: base) {
+  @return map-get($map-sizes, $type);
+}
+
+@function get-size($size, $type: base) {
+  @return map-fetch($map-sizes, $type $size);
+}
+
+@function get-spacing-label($spacing-type) {
+  @return map-get($map-config-spacing, $spacing-type);
+}
+
+@function get-spacing-size($spacing-type) {
+  @return get-size(get-spacing-label($spacing-type), 'spacing');
+}
+
+@function get-direction($direction) {
+  @return map-fetch($map-config, "directions" $direction);
+}
+
+@function get-directions() {
+  @return map-get($map-config, "directions");
+}
+
+@function get-direction-position($direction-position) {
+  @return map-fetch($map-config, "direction-positions" $direction-position);
+}
+
+@function get-direction-positions() {
+  @return map-get($map-config, "direction-positions");
+}
+
+@function get-color($color) {
+  @return var(--color-#{$color});
+}
+
+@function get-colors() {
+  @return map-get($map-config, "colors");
+}
+
+@function get-config($config) {
+  @return map-get($map-config, $config);
+}
+
+@function get-font-type($font-type) {
+  @return map-fetch($map-config, "font-types" $font-type);
+}
+
+@function get-font-types() {
+  @return map-get($map-config, "font-types");
+}
+
+@function get-font-size-label($font) {
+  $font-level: map-get($map-config-text, "#{$font}");
+  $font-size-label: map-fetch(get-font-types(), '#{$font-level}' 'font-size');
+  @return $font-size-label;
+}
+
+@function get-font-size-value($font) {
+  @return get-size(get-font-size-label($font), 'fonts');
+}
+
+@function get-em-breakpoints() {
+  @return map-get($map-config, "em-breakpoints");
+}
+
+@function get-size-label($label) {
+  @return map-fetch($map-config, "size-labels" $label);
+}
+
+@function get-size-labels() {
+  @return map-get($map-config, "size-labels");
+}

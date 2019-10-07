@@ -1,0 +1,41 @@
+// const BtnSkeleton = {
+//   className: string,
+//   id: number | React.ReactNode,
+//   interpreterKlasses: string,
+//   internalKlasses: string
+//   text: string,
+//   colorText: TColors,
+//   colorBackground: TColors
+//   characterWidth: TPositionLabels,
+//   isTiny: boolean,
+//   isBig: boolean,
+//   isNowrap: boolean,
+//   isBold: boolean,
+//   isThin: boolean,
+//   isItalic: boolean,
+//   isUnderlined: boolean,
+//   isCrossedOut: boolean,
+//   wordBreak: "all" | "word",
+//   whiteSpace: "pre"| "preLine",
+//   textTransform: "uppercase" | "capitalize"
+//   href: string,
+//   target: "_self" | "_blank",
+//   isDisabled: boolean,
+//   isActive: boolean,
+//   isOpen: boolean,
+//   isErrored: boolean
+//   onClick: ((e: React.SyntheticEvent) => void)
+//   breakpoint: TBreakpoints,
+//   isRounded: boolean,
+//   isRoundedHalf: boolean,
+//   isRoundedFull: boolean
+//   breakpointDirection: "over" | "under",
+//   kind: TKinds,
+//   isStandard: boolean,
+//   isFull: boolean,
+//   isCentered: boolean,
+//   isSkinny: boolean,
+//   margin: IStylesSpacing,
+//   preset: "main",
+//   brand: "global" | "globalOutline" | "primary" | "primaryOutline" | "secondary" | "warning" | "success" | "disabled" | "simple" | "neutral"
+// }

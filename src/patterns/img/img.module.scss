@@ -1,0 +1,9 @@
+.img {
+  // TODO: this will hide caption text, but is important because it adds bottom cushion below picture if removed...
+  font-size: 0;
+  display: block;
+}
+
+.img.ut-rounded-full img {
+    border-radius: 100%;
+}

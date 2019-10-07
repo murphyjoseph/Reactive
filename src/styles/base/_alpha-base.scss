@@ -1,0 +1,25 @@
+// ### ---------------------------------------- # \\
+//     ALPHA for BASE
+// ### ---------------------------------------- # \\
+
+@import "decimal";
+
+@import "map-fetch";
+@import "map-set";
+
+@import "create-size-map";
+
+@import "map-config";
+@import "map-sizes";
+@import "map-col-percents";
+@import "map-col-auto";
+
+@import "getters";
+
+@import "map-breakpoints";
+@import "breakpoint";
+
+// DESCRIPTION -> General partial is more for base tag styles that
+// add to the normalize partial that's imported in the external folder.
+
+@import "general";

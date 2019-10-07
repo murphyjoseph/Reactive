@@ -1,0 +1,65 @@
+// # ========= --- Add Shadow --- ========== # \\
+
+@mixin mi-shadow($direction: 'all', $shadow-size: 'size3', $blur-size: 'size3', $spread-size: null, $color: 'shadow', $breakpoint: null) {
+
+  $is-valid-size-shadow: fn-validate-size($shadow-size);
+  $is-valid-size-blur: fn-validate-size($blur-size);
+  $is-valid-size-spread: fn-validate-size($spread-size);
+  $is-valid-direction: fn-validate-direction($direction);
+  $is-valid-color: fn-validate-color($color);
+  $is-valid-breakpoint: fn-validate-breakpoint($breakpoint);
+  $size-shadow: get-size($shadow-size, shadows);
+  $size-spread: get-size($spread-size, shadows);
+  $size-blur: get-size($blur-size, shadows);
+  $shadow-color: get-color($color);
+
+  $shadow-properties: '';
+
+  @if $direction =='all' {
+    $shadow-properties: '0 0';
+  } @else if $direction == 'vertical' {
+    $shadow-properties: '0 #{$size-shadow} #{$size-shadow} #{$shadow-color}, 0 -#{$size-shadow}';
+  } @else if $direction == 'horizontal' {
+    $shadow-properties: '-#{$size-shadow} 0 #{$size-shadow} #{$shadow-color}, #{$size-shadow} 0';
+  } @else if $direction == 'top' {
+    $shadow-properties: '0 -#{$size-shadow}';
+  } @else if $direction == 'top-left' {
+    $shadow-properties: '-#{$size-shadow} -#{$size-shadow}';
+  } @else if $direction == 'top-right' {
+    $shadow-properties: '#{$size-shadow} -#{$size-shadow}';
+  } @else if $direction == 'bottom' {
+    $shadow-properties: '0 #{$size-shadow}';
+  } @else if $direction == 'bottom-left' {
+    $shadow-properties: '-#{$size-shadow} #{$size-shadow}';
+  } @else if $direction == 'bottom-right' {
+    $shadow-properties: '#{$size-shadow} #{$size-shadow}';
+  } @else if $direction == 'right' {
+    $shadow-properties: '#{$size-shadow} 0';
+  } @else if $direction == 'left' {
+    $shadow-properties: '-#{$size-shadow} 0';
+  } @else {
+    @warn "#{$direction} isn't a valid direction, please select from the following: all, vertical, horizontal, bottom, bottom-right, bottom-left, top, top-right, top-left, right, left";
+  }
+
+  @if $blur-size != null {
+    $shadow-properties: $shadow-properties + ' ' + $size-blur;
+  }
+  @else {
+    $shadow-properties: $shadow-properties + ' ' + 0;
+  }
+  @if $spread-size != null {
+    $shadow-properties: $shadow-properties + ' ' + $size-spread;
+  }
+  @else {
+    $shadow-properties: $shadow-properties + ' ' + 0;
+  }
+  $shadow-properties: $shadow-properties+' '+$shadow-color;
+  @if $breakpoint != null {
+    @include breakpoint-over($breakpoint) {
+      box-shadow: unquote($shadow-properties);
+    }
+  }
+  @else {
+    box-shadow: unquote($shadow-properties);
+  }
+}

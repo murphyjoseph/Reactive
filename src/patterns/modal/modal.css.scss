@@ -1,0 +1,51 @@
+@import '../../styles/base/_alpha-base';
+
+// # ========= --- MODAL STYLES --- ========== # \\
+
+.modal-close-icon {
+  position: absolute;
+  right: get-size('size2');
+  top: get-size('size2');
+}
+
+.modal-body-open {
+  overflow: hidden;
+}
+
+.modal-content {
+  width: 100%;
+}
+
+.modal-content--flex-height-dynamic {
+  max-height: 100%;
+  overflow-y: scroll;
+}
+
+@each $key, $value in get-sizes('modal') {
+  .modal-content--flex-height-#{$key} {
+    overflow-y: auto;
+    height: 100%;
+    max-height: $value;
+  }
+}
+
+@each $key, $value in get-sizes('modal') {
+  .modal-content--flex-width-#{$key} {
+    width: 100%;
+    max-width: $value;
+  }
+}
+
+.modal-content--full-screen-always {
+  height: 95%;
+  width: 95%;
+}
+
+.modal-overlay {
+  background: get-color('smoke');
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}

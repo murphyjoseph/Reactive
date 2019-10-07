@@ -1,0 +1,245 @@
+// # ========= --- Default Theme SCSS Map --- ========== # \\
+
+$map-theme: (
+  field-select-border-idle: get-color('grey'),
+  progress-bar-bg: get-color('grey-light-1'),
+  progress-bar-bg-active: get-color('success'),
+  tab-bg: get-color('grey-light-1'),
+  tab-bg-hover: get-color('grey'),
+  tab-bg-clicked: get-color('white'),
+  tab-text: get-color('grey-light-1'),
+  tab-text-hover: get-color('black'),
+  tab-text-clicked: get-color('black'),
+  btns: (
+    default: (
+      main: (
+        bg: get-color('global'),
+        border: get-color('global'),
+        text: get-color('white')
+      ),
+      hover: (
+        bg: get-color('global-light-1'),
+        border: get-color('global-light-1'),
+        text: get-color('white')
+      )
+    ),
+    skins: (
+      disabled: (
+        main: (
+          bg: get-color('disabled'),
+          border: get-color('disabled'),
+          text: get-color('white')
+        ),
+        hover: (
+          bg: get-color('disabled'),
+          border: get-color('disabled'),
+          text: get-color('white')
+        )
+      ),
+      success: (
+        main: (
+          bg: get-color('white'),
+          border: get-color('success'),
+          text: get-color('success')
+        ),
+        hover: (
+          bg: get-color('white'),
+          border: get-color('success-light-1'),
+          text: get-color('success-light-1')
+        )
+      ),
+      warning: (
+        main: (
+          bg: get-color('warning'),
+          border: get-color('warning'),
+          text: get-color('white')
+        ),
+        hover: (
+          bg: get-color('warning-light-1'),
+          border: get-color('warning-light-1'),
+          text: get-color('white')
+        )
+      ),
+      global: (
+        main: (
+          bg: get-color('global'),
+          border: get-color('global'),
+          text: get-color('white')
+        ),
+        hover: (
+          bg: get-color('global-light-1'),
+          border: get-color('global-light-1'),
+          text: get-color('white')
+        )
+      ),
+      global-outline: (
+        main: (
+          bg: get-color('white'),
+          border: get-color('global'),
+          text: get-color('global')
+        ),
+        hover: (
+          bg: get-color('global-light-1'),
+          border: get-color('global-light-1'),
+          text: get-color('white')
+        )
+      ),
+      primary: (
+        main: (
+          bg: get-color('primary'),
+          border: get-color('primary'),
+          text: get-color('white')
+        ),
+        hover: (
+          bg: get-color('primary-light-1'),
+          border: get-color('primary-light-1'),
+          text: get-color('white')
+        )
+      ),
+      primary-outline: (
+        main: (
+          bg: get-color('white'),
+          border: get-color('primary'),
+          text: get-color('primary')
+        ),
+        hover: (
+          bg: get-color('primary-light-1'),
+          border: get-color('primary-light-1'),
+          text: get-color('primary-dark-1')
+        )
+      ),
+      neutral: (
+        main: (
+          bg: get-color('grey'),
+          border: get-color('grey'),
+          text: get-color('white')
+        ),
+        hover: (
+          bg: get-color('grey-dark-1'),
+          border: get-color('grey-dark-1'),
+          text: get-color('white')
+        )
+      ),
+      simple: (
+        main: (
+          bg: transparent,
+          border: transparent,
+          text: get-color('primary')
+        ),
+        hover: (
+          bg: transparent,
+          border: transparent,
+          text: get-color('primary')
+        )
+      )
+    )
+  ),
+  links: (
+    default: (
+      main: (
+        text: get-color('global'),
+        underline: get-color('global')
+      ),
+      hover: (
+        text: get-color('global-dark-1'),
+        underline: get-color('global-dark-1')
+      )
+    ),
+    skins: (
+      global: (
+        main: (
+          text: get-color('global'),
+          underline: get-color('global')
+        ),
+        hover: (
+          text: get-color('global-dark-1'),
+          underline: get-color('global-dark-1')
+        )
+      ),
+      primary: (
+        main: (
+          text: get-color('primary'),
+          underline: get-color('primary')
+        ),
+        hover: (
+          text: get-color('primary-dark-1'),
+          underline: get-color('primary-dark-1')
+        )
+      )
+    )
+  ),
+  tooltips: (
+    default: (
+      main: (
+        bg: get-color('global'),
+        text: get-color('white'),
+        triangle: get-color('global')
+      )
+    ),
+    skins: (
+      global: (
+        main: (
+          bg: get-color('global'),
+          text: get-color('white'),
+          triangle: get-color('global')
+        )
+      ),
+      primary: (
+        main: (
+          bg: get-color('primary'),
+          text: get-color('white'),
+          triangle: get-color('primary')
+        )
+      ),
+      secondary: (
+        main: (
+          bg: get-color('white'),
+          text: get-color('black'),
+          triangle: get-color('white')
+        )
+      ),
+      success: (
+        main: (
+          bg: get-color('success'),
+          text: get-color('white'),
+          triangle: get-color('success')
+        )
+      ),
+      warning: (
+        main: (
+          bg: get-color('warning'),
+          text: get-color('white'),
+          triangle: get-color('warning')
+        )
+      )
+    )
+  ),
+  dividers: (
+    default: (
+      main: (
+        fill: get-color('transparent'),
+        stroke: get-color('global')
+      )
+    ),
+    skins: (
+      global: (
+        main: (
+          fill: get-color('transparent'),
+          stroke: get-color('global')
+        )
+      ),
+      primary: (
+        main: (
+          fill: get-color('transparent'),
+          stroke: get-color('primary')
+        )
+      ),
+      success: (
+        main: (
+          fill: get-color('success'),
+          stroke: get-color('success')
+        )
+      )
+    )
+  )
+);

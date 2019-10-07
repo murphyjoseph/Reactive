@@ -1,0 +1,11 @@
+// # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # \\
+// ***************** CONSTANTS for spacing fonts *************** \\
+// # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # \\
+
+@import "../base/alpha-base";
+:export {
+  @each $name,
+  $value in get-sizes('fonts') {
+    #{$name}: #{$value};
+  }
+}

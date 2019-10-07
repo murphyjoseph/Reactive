@@ -1,0 +1,13 @@
+// # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # \\
+// ***************** CONSTANTS for size labels *************** \\
+// # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # \\
+
+@import "../base/alpha-base";
+
+$updated-map-size-labels: append(get-size-labels(), none 'none');
+
+:export {
+  @each $name, $value in $updated-map-size-labels {
+    #{$name}: #{$name};
+  }
+}

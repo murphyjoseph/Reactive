@@ -1,0 +1,20 @@
+// # ========= --- Match Function --- ========== # \\
+
+@function fn-match($haystack, $needle) {
+  @each $item in $haystack {
+    $index: index($item, $needle);
+    @if $index {
+      $return: if($index == 1, 2, $index);
+      @return nth($item, $return);
+    }
+  }
+  @return false;
+}
+
+/*
+EXAMPLE ->
+$list: a b, c d, e f;
+$value: match($list, e); returns e
+$value: match($list, b); returns b
+$value: match($list, z); returns z
+*/

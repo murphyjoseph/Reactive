@@ -1,0 +1,180 @@
+// # ========= --- General Theming Mixins --- ========== # \\
+// These are mixins that should make theming easier and more consistent
+@mixin mi-theme($array) {
+  $main-bg: map-fetch($array, 'main' 'bg');
+  $main-text: map-fetch($array, 'main' 'text');
+  $main-border: map-fetch($array, 'main' 'border');
+  $hover-bg: map-fetch($array, 'hover' 'bg');
+  $hover-text: map-fetch($array, 'hover' 'text');
+  $hover-border: map-fetch($array, 'hover' 'border');
+  @if $main-bg !=null {
+    background-color: $main-bg;
+  }
+  @if $main-text !=null {
+    color: $main-text;
+  }
+  @if $main-border !=null {
+    border-color: $main-border;
+  }
+  &:hover:not(.ns-btn-keep-color) {
+    @if $hover-bg !=null {
+      background-color: $hover-bg;
+    }
+    @if $hover-text !=null {
+      color: $hover-text;
+    }
+    @if $hover-border !=null {
+      border-color: $hover-border;
+    }
+  }
+}
+
+@mixin mi-theme-divider($array) {
+  $main-fill: map-fetch($array, 'main' 'fill');
+  $main-stroke: map-fetch($array, 'main' 'stroke');
+  fill: $main-fill;
+  stroke: $main-stroke;
+}
+
+@mixin mi-theme-callout($array) {
+  $main-border-bottom: map-fetch($array, 'main' 'triangle');
+  $hover-border-bottom: map-fetch($array, 'hover' 'triangle');
+  .mo-callout {
+    @include mi-theme($array);
+  }
+  .mo-callout--arrow-t {
+    &:before {
+      border-bottom-color: $main-border-bottom;
+    }
+    &:hover {
+      &:before {
+        border-bottom-color: $hover-border-bottom;
+      }
+    }
+  }
+}
+
+@mixin mi-theme-hash($array) {
+  $active-bg: map-fetch($array, 'active' 'bg');
+  $active-text: map-fetch($array, 'active' 'text');
+  $active-border: map-fetch($array, 'active' 'border');
+  .mo-hash {
+    @include mi-theme($array);
+    &.is-active {
+      @if $active-bg !=null {
+        background-color: $active-bg;
+      }
+      @if $active-text !=null {
+        color: $active-text;
+      }
+      @if $active-border !=null {
+        border-color: $active-border;
+      }
+    }
+  }
+}
+
+@mixin mi-theme-link-main($array) {
+  $main-underline: map-fetch($array, 'main' 'underline');
+  $main-text: map-fetch($array, 'main' 'text');
+  $hover-underline: map-fetch($array, 'hover' 'underline');
+  $hover-text: map-fetch($array, 'hover' 'text');
+  $active-underline: map-fetch($array, 'active' 'underline');
+  $active-text: map-fetch($array, 'active' 'text');
+  .mo-link-main {
+    @if $main-text !=null {
+      color: $main-text;
+    }
+    &:hover {
+      @if $hover-text !=null {
+        color: $hover-text;
+      }
+    }
+    &.is-underlineable {
+      &:hover {
+        &:before {
+          @if $hover-underline !=null {
+            background-color: $hover-underline;
+          }
+        }
+      }
+    }
+    &.is-active {
+      &:before {
+        @if $active-underline !=null {
+          background-color: $active-underline;
+        }
+      }
+    }
+    .ns-clicked-link-main & {
+      &:before {
+        @if $active-underline !=null {
+          background-color: $active-underline;
+        }
+      }
+    }
+  }
+}
+
+@mixin mi-theme-link($array) {
+  $main-underline: map-fetch($array, 'main' 'underline');
+  $main-text: map-fetch($array, 'main' 'text');
+  $hover-underline: map-fetch($array, 'hover' 'underline');
+  $hover-text: map-fetch($array, 'hover' 'text');
+  .mo-link {
+    @if $main-text !=null {
+      color: $main-text;
+    }
+    &:hover {
+      @if $hover-text !=null {
+        color: $hover-text;
+      }
+    }
+  }
+  .mo-link--underlined {
+    &:before {
+      @if $hover-underline !=null {
+        background-color: $main-underline;
+      }
+    }
+    &:hover {
+      &:before {
+        @if $hover-underline !=null {
+          background-color: $hover-underline;
+        }
+      }
+    }
+  }
+}
+
+@mixin mi-theme-tooltip($array) {
+  $main-bg: map-fetch($array, 'main' 'bg');
+  $main-text: map-fetch($array, 'main' 'text');
+  $main-border-bottom: map-fetch($array, 'main' 'triangle');
+  @if $main-bg !=null {
+    background-color: $main-bg;
+  }
+  @if $main-text !=null {
+    color: $main-text;
+  }
+  &.mo-tooltip--t {
+    &:after {
+      border-color: $main-border-bottom transparent transparent transparent;
+    }
+  }
+  &.mo-tooltip--r {
+    &:after {
+      border-color: transparent $main-border-bottom transparent transparent;
+    }
+  }
+  &.mo-tooltip--l {
+    &:after {
+      border-color: transparent transparent transparent $main-border-bottom;
+    }
+  }
+  &.mo-tooltip--b {
+    &:after {
+      border-color: transparent transparent $main-border-bottom transparent;
+    }
+  }
+}

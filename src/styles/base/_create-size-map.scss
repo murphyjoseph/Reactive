@@ -1,0 +1,53 @@
+// # ========= --- Create Size Maps --- ========== # \\
+
+@function create-size-map($multiplier, $floor: null, $ceiling: null, $size-prefix: null, $size-suffix: null) {
+  $new-size-map: ();
+  $size-value: 0;
+  $size-labels: map-get($map-config, 'size-labels');
+  $size-labels-length: length($size-labels);
+  $size-ceiling: '';
+  $size-floor: '';
+
+  // FLOOR
+  @if $floor == null {
+    $size-floor: map-get($map-config, 'size-floor') * $multiplier;
+  } @else {
+    $size-floor: $floor * $multiplier;
+  }
+
+  // CEILING
+  @if $ceiling == null {
+    $size-ceiling: map-get($map-config, 'size-ceiling') * $multiplier;
+  } @else {
+    $size-ceiling: ($ceiling) * $multiplier;
+  }
+
+  $size-increment: ($size-ceiling - $size-floor)/$size-labels-length;
+
+  $i: 0;
+  @each $size-key in $size-labels {
+
+    // CREATE KEYS
+    @if ($size-prefix != null) {
+      $size-key: "#{$size-prefix}#{$size-key}"
+    }
+
+    // CREATE VALUES
+    @if ($size-suffix != null) {
+      $size-key: "#{$size-key}#{$size-suffix}"
+    }
+
+    $new-key-value: ();
+    @if $i < 1 {
+      $size-value: $size-floor;
+    } @else {
+      $size-value: $size-value + $size-increment;
+    }
+
+    $size-value: decimal-ceil($size-value);
+
+    $new-size-map: map-set($new-size-map, $size-key, $size-value);
+    $i: $i + 1;
+  }
+  @return $new-size-map;
+}

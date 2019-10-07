@@ -1,0 +1,25 @@
+  // # ========= --- Direction Function --- ========== # \\
+
+@function fn-direction($direction) {
+  @if $direction == 'all' {
+    @return null;
+  } @else if $direction == 'center'{
+    @return center;
+  } @else if $direction == 'bottom' {
+    @return bottom;
+  } @else if $direction == 'top' {
+    @return top;
+  } @else if $direction == 'right' {
+    @return right;
+  } @else if $direction == 'left' {
+    @return left;
+  } @else if $direction == 'vertical' {
+    @return top, bottom;
+  } @else if $direction == 'horizontal' {
+    @return right, left;
+  } @else if $direction == 'middle' {
+    @return middle;
+  } @else {
+    @error "SASS Function -> 'fn-direction' | #{$direction} | is not an accepted $direction parameter";
+  }
+}

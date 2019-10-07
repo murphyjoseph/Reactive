@@ -1,0 +1,29 @@
+// # ========= --- Padding Utility --- ========== # \\
+
+.ut-padding-all {@include mi-make-modifiers(get-sizes(spacing), padding);}
+.ut-padding-bottom {@include mi-make-modifiers(get-sizes(spacing), padding-bottom);}
+.ut-padding-horizontal {@include mi-make-modifiers(get-sizes(spacing), padding-left, padding-right);}
+.ut-padding-left {@include mi-make-modifiers(get-sizes(spacing), padding-left);}
+.ut-padding-right {@include mi-make-modifiers(get-sizes(spacing), padding-right);}
+.ut-padding-top {@include mi-make-modifiers(get-sizes(spacing), padding-top);}
+.ut-padding-vertical {@include mi-make-modifiers(get-sizes(spacing), padding-top, padding-bottom);}
+
+.ut-padding--none {
+  padding: 0;
+}
+
+@each $breakpoint-name, $breakpoint-size in $map-breakpoints {
+  .ut-padding--none-over-#{$breakpoint-name} {
+    @include breakpoint-over($breakpoint-name) {
+      padding: 0;
+    }
+  }
+}
+
+@each $breakpoint-name, $breakpoint-size in $map-breakpoints {
+  .ut-padding--none-under-#{$breakpoint-name} {
+    @include breakpoint-under($breakpoint-name) {
+      padding: 0;
+    }
+  }
+}

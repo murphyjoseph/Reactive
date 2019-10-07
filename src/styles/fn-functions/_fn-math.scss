@@ -1,0 +1,17 @@
+// # ========= --- Math Function --- ========== # \\
+
+// DESCRIPTION -> Calculate percentages
+@function fn-math-perc($target, $container) {
+  @return ($target / $container) * 100%;
+}
+
+// DESCRIPTION -> Calculate photoshop tracking to use with css letter-spacing
+@function fn-math-tracking($ps-value) {
+  @return ($ps-value / 1000) + em;
+}
+
+// DESCRIPTION -> Calculate rem size
+@function fn-math-calc-rem($size) {
+  $rem-size: $size / 16px;
+  @return $rem-size * 1rem;
+}

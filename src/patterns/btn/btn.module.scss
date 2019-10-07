@@ -1,0 +1,86 @@
+@import '../../styles/base/alpha-base';
+@import '../../styles/mi-mixins/alpha-mixins';
+@import '../../styles/theming/theming.module.css.scss';
+
+// # ========= ---  BTN STYLES --- ========== # \\
+
+.btn {
+  @include mi-theme(map-fetch($map-theme, 'btns' 'default'));
+  @include mi-align(text, c);
+  padding: get-size('size1') get-size('size3');
+  border-style: solid;
+  border-width: 1px;
+  position: relative; // padding: $size-btn-v-padding $size-btn-h-padding;
+  cursor: pointer;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all .2s ease-in-out;
+  &:hover {
+    .ns-tabs & {
+      border: none;
+    }
+  }
+  .ns-standard-flex & {
+    @include mi-standard-flex();
+  }
+}
+
+.btn-full {
+  width: 100%;
+}
+
+.btn-standard {
+  width: get-size('size4', 'btn');
+  padding-top: get-size('size2');
+  padding-bottom: get-size('size2');
+}
+
+.btn-skinny {
+  padding-top: get-size('size1');
+  padding-bottom: get-size('size1');
+}
+
+.btn-disabled {
+  cursor: default;
+}
+
+.btn-centered {
+  @include mi-position('center-block');
+}
+
+// THEMING
+.btn-global {
+  @include mi-theme(map-fetch($map-theme, 'btns' 'skins' 'global'));
+}
+
+.btn-global-outline {
+  @include mi-theme(map-fetch($map-theme, 'btns' 'skins' 'global-outline'));
+}
+
+.btn-primary {
+  @include mi-theme(map-fetch($map-theme, 'btns' 'skins' 'primary'));
+}
+
+.btn-primary-outline {
+  @include mi-theme(map-fetch($map-theme, 'btns' 'skins' 'primary-outline'));
+}
+
+.btn-disabled {
+  @include mi-theme(map-fetch($map-theme, 'btns' 'skins' 'disabled'));
+}
+
+.btn-warning {
+  @include mi-theme(map-fetch($map-theme, 'btns' 'skins' 'warning'));
+}
+
+.btn-success {
+  @include mi-theme(map-fetch($map-theme, 'btns' 'skins' 'success'));
+}
+
+.btn-simple {
+  @include mi-theme(map-fetch($map-theme, 'btns' 'skins' 'simple'));
+}
+
+.btn-neutral {
+  @include mi-theme(map-fetch($map-theme, 'btns' 'skins' 'neutral'));
+}

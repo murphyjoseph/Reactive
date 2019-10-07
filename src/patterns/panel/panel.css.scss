@@ -1,0 +1,94 @@
+@import '../../styles/base/_alpha-base';
+@import '../../styles/mi-mixins/alpha-mixins';
+
+// # ========= ---  PANEL STYLES --- ========== # \\
+
+.panel-no-portal, .panel-portal {
+  &.panel-direction-top,
+  &.panel-direction-bottom {
+    width: 100%;
+    @each $key, $value in get-sizes('panel') {
+      &.panel-size-#{$key} {
+        height: $value;
+      }
+    }
+  }
+}
+
+.panel-portal {
+  &.panel-direction-right,
+  &.panel-direction-left {
+    height: 100vh;
+  }
+}
+
+.panel-no-portal {
+  &.panel-direction-right,
+  &.panel-direction-left {
+    height: 100%;
+  }
+}
+
+.panel-no-portal, .panel-portal {
+  &.panel-direction-right,
+  &.panel-direction-left {
+    @each $key, $value in get-sizes('panel') {
+      &.panel-size-#{$key} {
+        width: $value;
+      }
+    }
+  }
+}
+
+.panel-portal, .panel-no-portal {
+  &.panel-direction-right {
+    @include mi-shadow($direction: "left");
+  }
+  &.panel-direction-left {
+    @include mi-shadow($direction: "right");
+  }
+  &.panel-direction-top {
+    @include mi-shadow($direction: "bottom");
+  }
+  &.panel-direction-bottom {
+    @include mi-shadow($direction: "top");
+  }
+}
+
+.panel-no-portal {
+  &.panel-direction-right {
+    right: 100%;
+    top: 0;
+  }
+  &.panel-direction-left {
+    left: 100%;
+    top: 0;
+  }
+  &.panel-direction-top {
+    top: 100%;
+    left: 0;
+  }
+  &.panel-direction-bottom {
+    bottom: 100%;
+    left: 0;
+  }
+}
+
+.panel-portal {
+  &.panel-direction-right {
+    right: 0;
+    top: 0;
+  }
+  &.panel-direction-left {
+    left: 0;
+    top: 0;
+  }
+  &.panel-direction-top {
+    left: 0;
+    top: 0;
+  }
+  &.panel-direction-bottom {
+    left: 0;
+    bottom: 0;
+  }
+}

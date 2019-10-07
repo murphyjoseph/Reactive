@@ -1,0 +1,14 @@
+@import '../../styles/base/_alpha-base';
+
+// # ========= ---  ICON STYLES --- ========== # \\
+
+.icon {
+  @each $size-label, $size-value in get-sizes('icons') {
+    &.is-#{$size-label} {
+      height: $size-value;
+      .icon__svg {
+        height: $size-value;
+      }
+    }
+  }
+}

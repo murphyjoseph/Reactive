@@ -1,0 +1,49 @@
+// # ========= --- Breakpoint Loop Mixin --- ========== # \\
+
+@mixin mi-bp-loop($class-name, $over-or-under-or-both: "over", $array: null) {
+
+  $temp-val: "" !global;
+
+  @if ($over-or-under-or-both == "over" or $over-or-under-or-both == "both") {
+    @each $breakpoint-name, $breakpoint-size in $map-breakpoints {
+      @include breakpoint-over($breakpoint-name) {
+        @if ($array != null) {
+          @each $key, $val in $array {
+            .#{$class-name}-#{$key}-over-#{$breakpoint-name} {
+              // $temp-val can be accessed in content!
+              $temp-val: $val !global;
+              @content;
+            }
+          }
+        } @else {
+          .#{$class-name}-over-#{$breakpoint-name} {
+            @content;
+          }
+        }
+      }
+    }
+  }
+
+  @if ($over-or-under-or-both == "under" or $over-or-under-or-both == "both") {
+    @each $breakpoint-name, $breakpoint-size in $map-breakpoints {
+      @include breakpoint-under($breakpoint-name) {
+        @if ($array != null) {
+          @each $key, $val in $array {
+            .#{$class-name}-#{key}-under-#{$breakpoint-name} {
+              // $temp-val can be accessed in content!
+              $temp-val: $val !global;
+              @content;
+            }
+          }
+        } @else {
+          .#{$class-name}-under-#{$breakpoint-name} {
+            @content;
+          }
+        }
+      }
+    }
+  }
+
+  $temp-val: "" !global;
+
+}

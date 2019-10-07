@@ -1,0 +1,10 @@
+// # ========= --- Border Thickness --- ========== # \\
+
+$local-i: 1;
+
+@each $size in get-size-labels() {
+  .ut-border-thickness-#{$size} {
+    border-size: $local-i;
+  }
+  $local-i: $local-i + 1;
+}
