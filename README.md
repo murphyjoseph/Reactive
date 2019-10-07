@@ -2,7 +2,7 @@
 
 This library is a work in progress and is not production ready. It is currently best viewed through Chrome since it has not been thoroughly QA'd yet in other browsers.
 
-Styling is pretty broken at the moment as I try to figure out an alternative to using typings-for-css-modules so not all settings are going to be functional at the moment.
+Styling is pretty broken at the moment as I try to figure out an alternative to using typings-for-css-modules so not all settings are going to be functional at the moment. Because the styles aren't working properly there will definitely be glitchiness with more advanced patterns such as the modal or panel.
 
 Also keep in mind I am still experimenting with different implementations. For example, right now I have higher order component called Patternize that I'm still debating whether or not to use or naybe reduce the amount of things it does.
 
@@ -23,6 +23,7 @@ npm start
 - I call the props bindings because if you were to reference them they would sometimes be this.props.props which I think looks silly and bindings helps resolve that.
 
 ### Issues to be Resolved
+- Implement a consistent method of merging passed and default bindings. 
 - Documentation needs to be implemented to explain the file structure.
 - Warnings need to be implemented
 - Review performance of rendering times and implement more performant options.
