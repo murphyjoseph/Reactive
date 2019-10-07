@@ -8,6 +8,22 @@
 .ut-padding-top {@include mi-make-modifiers(get-sizes(spacing), padding-top);}
 .ut-padding-vertical {@include mi-make-modifiers(get-sizes(spacing), padding-top, padding-bottom);}
 
+.ut-padding-all {@include mi-make-modifiers-breakpoint-over(get-sizes(spacing), padding);}
+.ut-padding-bottom {@include mi-make-modifiers-breakpoint-over(get-sizes(spacing), padding-bottom);}
+.ut-padding-horizontal {@include mi-make-modifiers-breakpoint-over(get-sizes(spacing), padding-left, padding-right);}
+.ut-padding-left {@include mi-make-modifiers-breakpoint-over(get-sizes(spacing), padding-left);}
+.ut-padding-right {@include mi-make-modifiers-breakpoint-over(get-sizes(spacing), padding-right);}
+.ut-padding-top {@include mi-make-modifiers-breakpoint-over(get-sizes(spacing), padding-top);}
+.ut-padding-vertical {@include mi-make-modifiers-breakpoint-over(get-sizes(spacing), padding-top, padding-bottom);}
+
+.ut-padding-all {@include mi-make-modifiers-breakpoint-under(get-sizes(spacing), padding);}
+.ut-padding-bottom {@include mi-make-modifiers-breakpoint-under(get-sizes(spacing), padding-bottom);}
+.ut-padding-horizontal {@include mi-make-modifiers-breakpoint-under(get-sizes(spacing), padding-left, padding-right);}
+.ut-padding-left {@include mi-make-modifiers-breakpoint-under(get-sizes(spacing), padding-left);}
+.ut-padding-right {@include mi-make-modifiers-breakpoint-under(get-sizes(spacing), padding-right);}
+.ut-padding-top {@include mi-make-modifiers-breakpoint-under(get-sizes(spacing), padding-top);}
+.ut-padding-vertical {@include mi-make-modifiers-breakpoint-under(get-sizes(spacing), padding-top, padding-bottom);}
+
 .ut-padding--none {
   padding: 0;
 }

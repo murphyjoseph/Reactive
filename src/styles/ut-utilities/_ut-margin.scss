@@ -8,6 +8,22 @@
 .ut-margin-top {@include mi-make-modifiers(get-sizes(spacing), margin-top);}
 .ut-margin-vertical {@include mi-make-modifiers(get-sizes(spacing), margin-top, margin-bottom);}
 
+.ut-margin-all {@include mi-make-modifiers-breakpoint-over(get-sizes(spacing), margin);}
+.ut-margin-bottom {@include mi-make-modifiers-breakpoint-over(get-sizes(spacing), margin-bottom);}
+.ut-margin-horizontal {@include mi-make-modifiers-breakpoint-over(get-sizes(spacing), margin-left, margin-right);}
+.ut-margin-left {@include mi-make-modifiers-breakpoint-over(get-sizes(spacing), margin-left);}
+.ut-margin-right {@include mi-make-modifiers-breakpoint-over(get-sizes(spacing), margin-right);}
+.ut-margin-top {@include mi-make-modifiers-breakpoint-over(get-sizes(spacing), margin-top);}
+.ut-margin-vertical {@include mi-make-modifiers-breakpoint-over(get-sizes(spacing), margin-top, margin-bottom);}
+
+.ut-margin-all {@include mi-make-modifiers-breakpoint-under(get-sizes(spacing), margin);}
+.ut-margin-bottom {@include mi-make-modifiers-breakpoint-under(get-sizes(spacing), margin-bottom);}
+.ut-margin-horizontal {@include mi-make-modifiers-breakpoint-under(get-sizes(spacing), margin-left, margin-right);}
+.ut-margin-left {@include mi-make-modifiers-breakpoint-under(get-sizes(spacing), margin-left);}
+.ut-margin-right {@include mi-make-modifiers-breakpoint-under(get-sizes(spacing), margin-right);}
+.ut-margin-top {@include mi-make-modifiers-breakpoint-under(get-sizes(spacing), margin-top);}
+.ut-margin-vertical {@include mi-make-modifiers-breakpoint-under(get-sizes(spacing), margin-top, margin-bottom);}
+
 .ut-margin-left-auto {
   margin-left: auto;
 }
