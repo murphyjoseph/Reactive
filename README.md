@@ -10,6 +10,10 @@ This library was built with Create-React-App and was built with Atomic Design in
 
 
 ### To Start the Project
+To start this application run the two commands below. If you do not have yarn installed please follow this link for instructions on how to install it.
+
+https://yarnpkg.com/en/docs/install
+
 ```
 yarn
 npm start
