@@ -8,7 +8,7 @@
   &.panel-direction-bottom {
     width: 100%;
     @each $key, $value in get-sizes('panel') {
-      &.panel-size-#{$key} {
+      &.panel-#{$key} {
         height: $value;
       }
     }
@@ -33,7 +33,7 @@
   &.panel-direction-right,
   &.panel-direction-left {
     @each $key, $value in get-sizes('panel') {
-      &.panel-size-#{$key} {
+      &.panel-#{$key} {
         width: $value;
       }
     }
@@ -92,3 +92,21 @@
     bottom: 0;
   }
 }
+
+
+  .panel-portal.panel-direction-right {
+    right: 0;
+    top: 0;
+  }
+  .panel-portal.panel-direction-left {
+    left: 0;
+    top: 0;
+  }
+  .panel-portal.panel-direction-top {
+    left: 0;
+    top: 0;
+  }
+  .panel-portal.panel-direction-bottom {
+    left: 0;
+    bottom: 0;
+  }

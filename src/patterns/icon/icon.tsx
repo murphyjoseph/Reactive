@@ -10,6 +10,7 @@ import { capitalizeFirst } from "../../utilities/capitalizeFirst";
 
 import styles from './icon.module.scss';
 import { ReactComponent as IconX } from '../../assets/icons/icon_x.svg';
+import cat from '../../utilities/classNames';
 
 interface Props {
   passedBindings?: IIcon;
@@ -30,10 +31,10 @@ export const Icon: FC<Props> = ({ passedBindings }) => {
 
   if (!!bindings.size) {
     const sizeKlass = capitalizeFirst(bindings.size);
-    klasses.addKlass(Styles[`is${sizeKlass}`]);
+    klasses.addKlass(Styles[`is-${sizeKlass}`]);
   }
 
-  const patternKlasses = [styles.icon, bindings.className, styles.icon__svg, ...klasses.getKlasses()].join(' ');
+  const patternKlasses = cat(styles.icon, bindings.className, styles.icon__svg, ...klasses.getKlasses());
 
   // OPTIONAL ATTRIBUTES
 
@@ -41,7 +42,7 @@ export const Icon: FC<Props> = ({ passedBindings }) => {
   if (bindings.onClick) optionalAttributes.onClick = bindings.onClick;
 
   const attributes: any = {};
-  attributes['className'] = [bindings.className, styles.icon__svg].join(' ');
+  attributes['className'] = cat(bindings.className, styles.icon__svg);
   // VIEW
   let IconMarkup: React.ReactNode;
 

@@ -29,7 +29,8 @@ const main: IPanel = {
       padding: {
         size: "size2",
         direction: "all"
-      }
+      },
+      colorBackground: "grey"
     }
   }
 };

@@ -75,13 +75,15 @@ export const Modal: FC<Props> = ({ passedBindings }) => {
 
   if (!!contentWrapper && !!contentWrapper.mode && !!contentWrapper.mode.flex) {
     if (!!contentWrapper.mode.flex.height) {
-      flexHeightSize = capitalizeFirst(contentWrapper.mode.flex.height);
-      flexHeightKlass = Styles[`modalContentFlexHeight${flexHeightSize}`];
+      flexHeightSize = `-${contentWrapper.mode.flex.height}`;
+      flexHeightKlass = Styles[`modal-content-flex-height${flexHeightSize}`];
+      console.log("SHIT")
+      console.log(flexHeightKlass)
     }
 
     if (!!contentWrapper.mode.flex.width) {
-      flexWidthSize = capitalizeFirst(contentWrapper.mode.flex.width);
-      flexWidthKlass = Styles[`modalContentFlexWidth${flexWidthSize}`];
+      flexWidthSize = `-${contentWrapper.mode.flex.width}`;
+      flexWidthKlass = Styles[`modal-content-flex-width${flexWidthSize}`];
     }
   }
 
@@ -122,7 +124,7 @@ export const Modal: FC<Props> = ({ passedBindings }) => {
                   !!contentBar &&
                   contentBar.slot
                 }
-                <div className={styles.modalCloseIcon}>
+                <div className={'modal-close-icon'}>
                   {
                     !!contentBar.isIconCloseDisplayed &&
                     <Icon passedBindings={({

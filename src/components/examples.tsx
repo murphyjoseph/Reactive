@@ -6,6 +6,7 @@ import { TColors } from '../types/util-types';
 import { Content } from "../patterns/content/content";
 import { Accordion } from "../patterns/accordion/accordion";
 import { Modal } from "../patterns/modal/modal";
+import { Panel } from '../patterns/panel/panel';
 
 export const Examples: FC = () => {
 
@@ -49,6 +50,21 @@ export const Examples: FC = () => {
           },
           contentArea: {
             slot: <Text passedBindings={({text: "Content Area for Modal. Click outside of modal to close."})} />
+          }
+        })} />
+
+        <Panel passedBindings={({
+          isPortal: true,
+          size: "size6",
+          location: "right",
+          trigger: {
+            slot: <Btn passedBindings={({ text: "Open A Right Panel", brand: "success", display: "block"})} />
+          },
+          contentBar: {
+            slot: <Text passedBindings={({text: "Content Area for Right Panel"})} />
+          },
+          contentArea: {
+            slot: <Text passedBindings={({text: "Content Area for Right Panel. Click outside of right panel to close."})} />
           }
         })} />
       </Container>
