@@ -77,8 +77,6 @@ export const Modal: FC<Props> = ({ passedBindings }) => {
     if (!!contentWrapper.mode.flex.height) {
       flexHeightSize = `-${contentWrapper.mode.flex.height}`;
       flexHeightKlass = Styles[`modal-content-flex-height${flexHeightSize}`];
-      console.log("SHIT")
-      console.log(flexHeightKlass)
     }
 
     if (!!contentWrapper.mode.flex.width) {
