@@ -2,9 +2,9 @@ import React, { FC } from "react";
 
 import { IProgressbar } from './progressbar.interface';
 import { PresetProgressbar } from './progressbar.presets';
-import styles from './-progressbar.module.scss';
+import styles from './progressbar.module.scss';
 
-import _merge from 'lodash/merge';
+import { createNewBindings } from "../../services/Merge";
 
 interface Props {
   passedBindings?: IProgressbar;
@@ -12,14 +12,13 @@ interface Props {
 
 export const Progressbar: FC<Props> = ({ passedBindings }) => {
 
+  if (!passedBindings) return <></>
+
   // SET DEFAULTS
 
-  let defaultBindings: IProgressbar = {
-    id: Progressbar,
-    ...PresetProgressbar.setPreset(passedBindings)
-  };
-
-  const bindings = _merge(defaultBindings, passedBindings);
+  const presetType = !!passedBindings.preset ? passedBindings.preset : "initial"
+  const presetBindings = PresetProgressbar[presetType]
+  const bindings = createNewBindings(presetBindings, passedBindings)
 
   // VIEW
 

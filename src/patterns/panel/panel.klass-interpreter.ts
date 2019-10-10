@@ -8,7 +8,7 @@ export const panelKlassInterpreter = (bindings: IPanel, klasses: KlassInterprete
 
   if (!!bindings.size) {
     const size = `-${bindings.size}`;
-    klasses.addKlass(Styles[`panel-size${size}`]);
+    klasses.addKlass(Styles[`panel${size}`]);
   }
 
 }
