@@ -19,11 +19,16 @@ yarn
 npm start
 ```
 
+If you make SCSS changes you'll need to generate new typings. The command to do that is below.
+```
+yarn tsm src
+```
+
 ### Notes
 - I call the props bindings because if you were to reference them they would sometimes be this.props.props which I think looks silly and bindings helps resolve that.
 
 ### Issues to be Resolved
-- Implement a consistent method of merging passed and default bindings. 
+- Implement a consistent method of merging passed and default bindings.
 - Documentation needs to be implemented to explain the file structure.
 - Warnings need to be implemented
 - Review performance of rendering times and implement more performant options.

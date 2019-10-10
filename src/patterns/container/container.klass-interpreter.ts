@@ -1,6 +1,6 @@
 
 import { IContainer } from './container.interface';
-import styles from './container.module.scss';
+import styles from './container.css.scss';
 
 const Styles = styles as { [key: string]: string };
 

@@ -8,7 +8,7 @@ import { KlassInterpreter } from '../../services/KlassInterpreter';
 import { capitalizeFirst } from "../../utilities/capitalizeFirst";
 
 import _merge from 'lodash/merge';
-import styles from './icon.module.scss';
+import styles from './icon.css.scss';
 
 import { ReactComponent as IconX } from '../../assets/icons/icon_x.svg';
 
@@ -34,7 +34,7 @@ export const Icon: FC<Props> = ({ passedBindings }) => {
     klasses.addKlass(Styles[`is${sizeKlass}`]);
   }
 
-  const patternKlasses = [styles.icon, bindings.className, styles.icon__svg, ...klasses.getKlasses()].join(' ');
+  const patternKlasses = [styles.icon, bindings.className, styles.iconSvg, ...klasses.getKlasses()].join(' ');
 
   // OPTIONAL ATTRIBUTES
 
@@ -42,7 +42,7 @@ export const Icon: FC<Props> = ({ passedBindings }) => {
   if (bindings.onClick) optionalAttributes.onClick = bindings.onClick;
 
   const attributes: any = {};
-  attributes['className'] = [bindings.className, styles.icon__svg].join(' ');
+  attributes['className'] = [bindings.className, styles.iconSvg].join(' ');
   // VIEW
   let IconMarkup: React.ReactNode;
 

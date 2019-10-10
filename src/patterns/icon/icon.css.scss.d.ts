@@ -1,7 +1,6 @@
 export const root: string;
 export const icon: string;
 export const isSize1: string;
-export const icon__svg: string;
 export const iconSvg: string;
 export const isSize2: string;
 export const isSize3: string;
