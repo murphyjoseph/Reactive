@@ -11,7 +11,6 @@ import { Btn } from '../btn/btn';
 import { Icon } from '../icon/icon';
 
 import { KlassInterpreter } from '../../services/KlassInterpreter';
-import { capitalizeFirst } from '../../utilities/capitalizeFirst';
 import cat from '../../utilities/classNames';
 
 interface Props {
