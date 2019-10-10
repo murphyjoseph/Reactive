@@ -80,6 +80,18 @@ module.exports = function(webpackEnv) {
         loader: require.resolve('css-loader'),
         options: cssOptions,
       },
+      // Typings for css modules loader already uses css-loader...
+      // THIS IS INCOMPATIBEL WITH CSS-LOADER 2.0+
+      // {
+      //   loader: require.resolve('better-typings-for-css-modules-loader'),
+      //   query: {
+      //     modules: true,
+      //     importLoaders: 1,
+      //     camelCase: true,
+      //     namedExport: true,
+      //     localIdentName: "[name]_[local]_[hash:base64:5]"
+      //   }
+      // },
       {
         // Options for PostCSS as we reference these options twice
         // Adds vendor prefixing based on your specified browser support in

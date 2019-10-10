@@ -2,7 +2,7 @@ import React, { FC } from "react";
 
 import { IBtn } from './btn.interface';
 import { textBtn } from "../text/text.css.scss";
-import { btn } from './btn.module.scss'
+import { btn } from './btn.css.scss'
 import { PresetBtn } from './btn.presets';
 import { btnKlassInterpreter } from './btn.klass-interpreter';
 

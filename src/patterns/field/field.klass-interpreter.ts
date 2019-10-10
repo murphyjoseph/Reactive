@@ -1,7 +1,7 @@
 import { IField } from "./field.interface";
 import { KlassInterpreter } from '../../services/KlassInterpreter';
 import { capitalizeFirst } from '../../utilities/capitalizeFirst';
-import styles from './field.module.scss';
+import styles from './field.css.scss';
 import { utMarginBottomSize3 } from "../../styles/application-styles.module.scss";
 
 const Styles = styles as { [key: string]: string };

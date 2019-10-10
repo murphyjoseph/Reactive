@@ -1,5 +1,5 @@
 import { IBtn } from "./btn.interface";
-import styles from './btn.module.scss';
+import styles from './btn.css.scss';
 
 const Styles = styles as { [key: string]: string };
 

@@ -4,7 +4,7 @@ import _merge from "lodash/merge";
 import { IImg } from "./img.interface";
 import { Text } from "../text/text"
 import { PresetImg } from './img.presets';
-import { img } from "./css.scss";
+import { img } from "./img.css.scss";
 
 import { KlassInterpreter } from '../../services/KlassInterpreter';
 import standardBreakpoints from "../../styles/constants/constant-breakpoints.module.scss";
