@@ -1,3 +1,3 @@
 export const accordion: string;
-export const accordionContent: string;
-export const accordionSummary: string;
+export const accordion__content: string;
+export const accordion__summary: string;

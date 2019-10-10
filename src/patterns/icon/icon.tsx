@@ -34,7 +34,7 @@ export const Icon: FC<Props> = ({ passedBindings }) => {
     klasses.addKlass(Styles[`is${sizeKlass}`]);
   }
 
-  const patternKlasses = [styles.icon, bindings.className, styles.iconSvg, ...klasses.getKlasses()].join(' ');
+  const patternKlasses = [styles.icon, bindings.className, styles.icon__svg, ...klasses.getKlasses()].join(' ');
 
   // OPTIONAL ATTRIBUTES
 
@@ -42,7 +42,7 @@ export const Icon: FC<Props> = ({ passedBindings }) => {
   if (bindings.onClick) optionalAttributes.onClick = bindings.onClick;
 
   const attributes: any = {};
-  attributes['className'] = [bindings.className, styles.iconSvg].join(' ');
+  attributes['className'] = [bindings.className, styles.icon__svg].join(' ');
   // VIEW
   let IconMarkup: React.ReactNode;
 

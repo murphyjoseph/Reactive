@@ -21,8 +21,9 @@ npm start
 
 If you make SCSS changes you'll need to generate new typings. The command to do that is below.
 ```
-yarn tsm src
+yarn tsm src -n "dashes"
 ```
+Further documentation can be found here: https://github.com/skovy/typed-scss-modules
 
 ### Notes
 - I call the props bindings because if you were to reference them they would sometimes be this.props.props which I think looks silly and bindings helps resolve that.
