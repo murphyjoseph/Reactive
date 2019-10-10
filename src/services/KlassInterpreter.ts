@@ -139,11 +139,11 @@ export class KlassInterpreter {
     // BORDER CONCATENATION
     if (!!this.bindings.border) {
       if (!!this.bindings.border.color && !!this.bindings.border.size && !!this.bindings.border.direction) {
-        const size = capitalizeFirst(this.bindings.border.size);
-        const direction = capitalizeFirst(this.bindings.border.direction);
-        const color = capitalizeFirst(this.bindings.border.color);
+        const size = `-${this.bindings.border.size}`;
+        const direction = `-${this.bindings.border.direction}`;
+        const color = `-${this.bindings.border.color}`;
         this.addKlass(
-          Styles[`moColorBorder${direction}${color}${size}`]
+          Styles[`mo-color-border${direction}${color}${size}`]
         );
       } else {
         console.warn("No size, color, and or direction was set on border object.");
@@ -228,7 +228,7 @@ export class KlassInterpreter {
         const direction = `-${this.bindings.shadow.direction}`;
         const size = `-${this.bindings.shadow.size}`;
         this.addKlass(
-          Styles[`utShadow${direction}${size}`]
+          Styles[`ut-shadow${direction}${size}`]
         );
       }
     }

@@ -4,7 +4,7 @@ import ReactModal from 'react-modal';
 
 import { IModal } from './modal.interface';
 import { PresetModal } from './modal.presets';
-import styles from './modal.css.scss';
+import styles from './modal.module.scss';
 
 import { Container } from '../container/container';
 import { Btn } from '../btn/btn';

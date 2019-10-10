@@ -1,4 +1,5 @@
 import React, { FC } from "react";
+import _merge from 'lodash/merge';
 
 import { IIcon } from './icon.interface';
 import { EIcon } from './icon.enum';
@@ -7,9 +8,7 @@ import { PresetIcon } from './icon.presets';
 import { KlassInterpreter } from '../../services/KlassInterpreter';
 import { capitalizeFirst } from "../../utilities/capitalizeFirst";
 
-import _merge from 'lodash/merge';
-import styles from './icon.css.scss';
-
+import styles from './icon.module.scss';
 import { ReactComponent as IconX } from '../../assets/icons/icon_x.svg';
 
 interface Props {

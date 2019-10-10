@@ -12,7 +12,6 @@ import standardBreakpoints from "../../styles/constants/constant-breakpoints.mod
 import { utImgCircle } from "../../styles/application-styles.module.scss";
 import cat from "../../utilities/classNames";
 
-
 interface Props {
   passedBindings?: IImg;
 }

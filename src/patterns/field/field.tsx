@@ -9,7 +9,7 @@ import { fieldKlassInterpreter } from './field.klass-interpreter';
 import { PresetField } from './field.presets';
 import { Text } from '../text/text'
 import { Container } from "../container/container";
-import styles from './-field.css.scss';
+import styles from './field.module.scss';
 
 import { KlassInterpreter } from '../../services/KlassInterpreter';
 import { stFlexColYCenter, stFlexColAuto1, stFlexColPercent100, stFlex, stFlexWrap, utPositionRelative, utMarginBottomSize1, utMarginRightSize2, stFlexColOrderFirst, stFlexColOrderLast, utMarginLeftSize2 } from "../../styles/application-styles.module.scss";

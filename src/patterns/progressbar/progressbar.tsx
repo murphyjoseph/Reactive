@@ -2,7 +2,7 @@ import React, { FC } from "react";
 
 import { IProgressbar } from './progressbar.interface';
 import { PresetProgressbar } from './progressbar.presets';
-import styles from './-progressbar.css.scss';
+import styles from './-progressbar.module.scss';
 
 import _merge from 'lodash/merge';
 

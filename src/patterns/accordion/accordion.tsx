@@ -4,7 +4,7 @@ import { IAccordion } from './accordion.interface';
 import { Container } from '../container/container';
 import { PresetAccordion } from './accordion.presets';
 
-import styles from './accordion.css.scss';
+import styles from './accordion.module.scss';
 import { createNewBindings } from "../../services/Merge";
 
 interface Props {

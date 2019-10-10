@@ -3,7 +3,7 @@ import _merge from 'lodash/merge';
 
 import { IPanel } from './panel.interface';
 import { PresetPanel } from './panel.presets';
-import styles from './-panel.css.scss';
+import styles from './-panel.module.scss';
 
 import { Portal } from '../portal/portal';
 import { Container } from '../container/container';

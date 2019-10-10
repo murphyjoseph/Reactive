@@ -1,5 +1,5 @@
 import { IText } from './text.interface';
-import styles from './text.css.scss';
+import styles from './text.module.scss';
 
 const Styles = styles as { [key: string]: string };
 
