@@ -106,9 +106,9 @@ export const Modal: FC<Props> = ({ passedBindings }) => {
           className={styles.modalContent}
           onRequestClose={doOnRequestClose}>
           {
-            !!bindings.contentWrapper &&
+            !!contentWrapper &&
             <Container passedBindings={({
-              ...bindings.contentWrapper.containerBindings,
+              ...contentWrapper.containerBindings,
               className: cat(flexWidthKlass, flexHeightKlass, fullScreenAlwaysKlass),
               padding: {
                 size: "size5",
@@ -116,15 +116,15 @@ export const Modal: FC<Props> = ({ passedBindings }) => {
               }
             })}>
             {
-              !!bindings.contentBar &&
-              <Container passedBindings={bindings.contentBar.containerBindings}>
+              !!contentBar &&
+              <Container passedBindings={contentBar.containerBindings}>
                 {
-                  !!bindings.contentBar &&
-                  bindings.contentBar.slot
+                  !!contentBar &&
+                  contentBar.slot
                 }
                 <div className={styles.modalCloseIcon}>
                   {
-                    !!bindings.contentBar.isIconCloseDisplayed &&
+                    !!contentBar.isIconCloseDisplayed &&
                     <Icon passedBindings={({
                       onClick: onIconCloseClick,
                       name: "IconX",
@@ -136,13 +136,13 @@ export const Modal: FC<Props> = ({ passedBindings }) => {
               </Container>
             }
             {
-              !!bindings.contentArea && isActive &&
-              bindings.contentArea.slot
+              !!contentArea && isActive &&
+              contentArea.slot
             }
             {
-              !!bindings.contentArea && !!bindings.contentArea.btnBindings && !!bindings.contentArea.btnBindings.text &&
+              !!contentArea && !!contentArea.btnBindings && !!contentArea.btnBindings.text &&
               <Btn passedBindings={({
-                ...bindings.contentArea.btnBindings,
+                ...contentArea.btnBindings,
                 onClick: handleClick
               })} />
             }
@@ -152,14 +152,14 @@ export const Modal: FC<Props> = ({ passedBindings }) => {
       }
 
       {
-        !!bindings && !!bindings.trigger && !!bindings.trigger.slot &&
+        !!bindings && !!trigger && !!trigger.slot &&
         <Container passedBindings={({
-          ...bindings.trigger.containerBindings,
+          ...trigger.containerBindings,
           onClick: () => setIsOpen(true)
         })}>
           {
-            !!bindings.trigger &&
-            bindings.trigger.slot
+            !!trigger &&
+            trigger.slot
           }
         </Container>
       }

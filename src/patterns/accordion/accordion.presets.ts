@@ -1,5 +1,4 @@
 import { IAccordion } from './accordion.interface';
-import { Presetter } from '../../services/Presetter';
 
 const initial: IAccordion = {
   className: undefined,

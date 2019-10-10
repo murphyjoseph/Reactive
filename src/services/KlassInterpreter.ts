@@ -1,9 +1,6 @@
 import _remove from 'lodash/remove';
 import styles from "../styles/application-styles.module.scss";
 import { capitalizeFirst } from '../utilities/capitalizeFirst';
-import { IStylesMaxWidth } from '../interfaces/styles.interface';
-import _each from 'lodash/each';
-import { utMaxWidthSize2, utMarginAllSize4 } from '../styles/application-styles.module.scss';
 
 const Styles = styles as { [key: string]: string };
 

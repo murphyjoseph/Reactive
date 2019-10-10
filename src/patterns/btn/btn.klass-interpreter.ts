@@ -10,6 +10,6 @@ export const btnKlassInterpreter = (bindings: IBtn) => {
   if (!!bindings.isSkinny) klasses.push(Styles.btnSkinny);
   if (!!bindings.isDisabled) klasses.push(Styles.btnDisabled);
   if (!!bindings.isCentered) klasses.push(Styles.btnCentered);
-  if (bindings.brand != undefined) klasses.push(Styles[`btn-${bindings.brand}`]);
+  if (bindings.brand !== undefined) klasses.push(Styles[`btn-${bindings.brand}`]);
   return klasses
 }

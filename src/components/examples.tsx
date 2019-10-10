@@ -4,8 +4,6 @@ import { Btn } from "../patterns/btn/btn";
 import { Container } from '../patterns/container/container';
 import { TColors } from '../types/util-types';
 import { Content } from "../patterns/content/content";
-import { Divider } from "../patterns/divider/divider";
-import { utPaddingAllSize1, utPaddingAllSize5, utPaddingAllSize2, utMarginAllSize1 } from '../styles/application-styles.module.scss';
 import { Accordion } from "../patterns/accordion/accordion";
 import { Modal } from "../patterns/modal/modal";
 
