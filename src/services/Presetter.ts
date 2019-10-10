@@ -1,7 +1,6 @@
 import { IPattern } from '../interfaces/pattern.interface';
 import _cloneDeep from 'lodash/cloneDeep';
 
-
 // TODO probably shouldn't use _cloneDeep
 export class Presetter<T extends IPattern> {
 

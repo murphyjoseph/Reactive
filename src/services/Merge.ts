@@ -1,5 +1,6 @@
 import _isFunction from 'lodash/isFunction'
 import _merge from 'lodash/merge';
+import _cloneDeep from 'lodash/cloneDeep';
 
 export const checkIsArray = (thing: any) => {
   if (Array.isArray(thing)) return true
@@ -23,7 +24,6 @@ export const setBindings = (iteratee: any, newObj: any) => {
       newObj[key] = iteratee[key]
     }
   }
-
   return newObj
 }
 
@@ -37,5 +37,9 @@ export const createNewBindings = (baselineOptions: any, passedOptions: any) => {
   // console.log("New")
   // console.log(newObj)
   // return newObj
-  return _merge(baselineOptions, passedOptions);
+
+  // below is a temporary fix until I can figure out how to
+  // make the recursive function `setBindings` perform better
+  const defaultOptions = _cloneDeep(baselineOptions);
+  return _merge(defaultOptions, passedOptions);
 }
