@@ -24,12 +24,31 @@ export const Examples: FC = () => {
     <main>
       <Container passedBindings={({
         margin: {size: "size1", direction: "all"},
-        padding: [{size: "size2", direction: "all", breakpointName: "breakpoint2", breakpointDirection: "over"},
-                  {size: "size8", direction: "all", breakpointName: "breakpoint4", breakpointDirection: "over"}
+        padding: [
+          {
+            size: "size2",
+            direction: "all",
+            breakpointName: "breakpoint2",
+            breakpointDirection: "over"
+          },
+          {
+            size: "size8",
+            direction: "all",
+            breakpointName: "breakpoint4",
+            breakpointDirection: "over"
+          }
         ],
         maxWidth: [
-          {size: "size1", breakpointDirection: "over", breakpointName: "breakpoint2"},
-          {size: "size4", breakpointDirection: "over", breakpointName: "breakpoint6"}
+          {
+            size: "size1",
+            breakpointDirection: "over",
+            breakpointName: "breakpoint2"
+          },
+          {
+            size: "size4",
+            breakpointDirection: "over",
+            breakpointName: "breakpoint6"
+          }
         ]
       })}>
         <Accordion passedBindings={({
@@ -72,18 +91,57 @@ export const Examples: FC = () => {
       <Container passedBindings={({
         colorBackground: "global",
         margin: {size: "size1", direction: "all"},
-        padding: [{size: "size2", direction: "all", breakpointName: "breakpoint2", breakpointDirection: "over"},
-                  {size: "size8", direction: "all", breakpointName: "breakpoint4", breakpointDirection: "over"}
+        padding: [
+          {
+            size: "size2",
+            direction: "all",
+            breakpointName: "breakpoint2",
+            breakpointDirection: "over"
+          },
+          {
+            size: "size8",
+            direction: "all",
+            breakpointName: "breakpoint4",
+            breakpointDirection: "over"
+          }
         ],
         maxWidth: [
-          {size: "size1", breakpointDirection: "over", breakpointName: "breakpoint2"},
-          {size: "size4", breakpointDirection: "over", breakpointName: "breakpoint6"}
+          {
+            size: "size1",
+            breakpointDirection: "over",
+            breakpointName: "breakpoint2"
+          },
+          {
+            size: "size4",
+            breakpointDirection: "over",
+            breakpointName: "breakpoint6"
+          }
         ]
       })}>
 
         <Content passedBindings={({
-          textBindings: [{text: statefulText, kind: "h1", isBig: true, colorText: statefulColor, textAlignment: "right"}, {text: statefulText, kind: "h1", isBig: true, colorText: statefulColor, textAlignment: "right"}],
-          btnBindings: [{ text: "Link to Google", brand: "warning", display: "block", href: "https://www.google.com"}]
+          textBindings: [
+            {
+              text: statefulText,
+              kind: "h1",
+              isBig: true,
+              colorText: statefulColor,
+              textAlignment: "right"
+            },
+            {
+              text: statefulText,
+              kind: "h1",
+              isBig: true,
+              colorText: statefulColor,
+              textAlignment: "right"
+            }],
+          btnBindings: [
+            {
+              text: "Link to Google",
+              brand: "warning",
+              display: "block",
+              href: "https://www.google.com"
+            }]
         })} />
         <Text passedBindings={({ text: statefulText, kind: "h1", isBig: true, colorText: statefulColor, textAlignment: "right"})} />
         <Text passedBindings={({ text: statefulText, kind: "h1", isBig: true, colorText: statefulColor, textAlignment: "right"})} />
