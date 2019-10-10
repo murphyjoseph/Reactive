@@ -37,7 +37,7 @@ export const Accordion: FC<Props> = ({ passedBindings }) => {
             className={styles.accordion}
             {...(bindings.isOpen ? { open: true } : {})}
           >
-            <summary className={styles.accordionSummary}>
+            <summary className={styles.accordion__summary}>
               <Container passedBindings={bindings.contentBar.containerBindings}>
                 {bindings.contentBar.slot}
               </Container>
