@@ -8,7 +8,7 @@ const initial: IAccordion = {
         size: "size1",
         direction: "all"
       },
-      colorBackground: "greyLight2"
+      colorBackground: "grey"
     }
   },
   contentArea: {
@@ -16,7 +16,8 @@ const initial: IAccordion = {
       padding: {
         size: "size1",
         direction: "all"
-      }
+      },
+      colorBackground: "global"
     }
   },
   wrapper: {
