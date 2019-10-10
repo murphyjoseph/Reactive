@@ -102,10 +102,10 @@ export const Field: FC<Props> = ({ passedBindings }) => {
   const isFull = !!bindings.isFull ? styles.fieldInputIsFull : "";
 
   // Set Input Min-Width & Max-Height
-  const KlassMinWidth = !!bindings.minWidth ? Styles[`fieldInputMinWidth${capitalizeFirst(bindings.minWidth)}`] : "";
-  const KlassMaxWidth = !!bindings.maxWidth ? Styles[`fieldInputMaxWidth${capitalizeFirst(bindings.maxWidth)}`] : "";
-  const KlassMinHeight = !!bindings.minHeight ? Styles[`fieldInputMinHeight${capitalizeFirst(bindings.minHeight)}`] : "";
-  const KlassMaxHeight = !!bindings.maxHeight ? Styles[`fieldInputMaxHeight${capitalizeFirst(bindings.maxHeight)}`] : "";
+  const KlassMinWidth = !!bindings.minWidth ? Styles[`field-input-min-width-${bindings.minWidth}`] : "";
+  const KlassMaxWidth = !!bindings.maxWidth ? Styles[`field-input-max-width-${bindings.maxWidth}`] : "";
+  const KlassMinHeight = !!bindings.minHeight ? Styles[`field-input-min-height-${bindings.minHeight}`] : "";
+  const KlassMaxHeight = !!bindings.maxHeight ? Styles[`field-input-max-height-${bindings.maxHeight}`] : "";
 
   const optionalInputAttributes: React.AllHTMLAttributes<HTMLElement> = {};
 
