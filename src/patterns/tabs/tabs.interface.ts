@@ -9,5 +9,5 @@ export interface ITab {
 
 export interface ITabs extends IPattern {
   tabs?: ITab[],
-  preset?: "main"
+  preset?: "initial"
 }

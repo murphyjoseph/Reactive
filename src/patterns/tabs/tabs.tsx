@@ -8,6 +8,8 @@ import { MediaFlag } from '../media-flag/media-flag';
 import { KlassInterpreter } from '../../services/KlassInterpreter';
 import { stFlexColAuto1, stFlex, stFlexNowrap, stFlexColPercent100 } from '../../styles/application-styles.module.scss'
 import _merge from 'lodash/merge';
+import cat from '../../utilities/classNames';
+import { createNewBindings } from '../../services/Merge';
 
 interface Props {
   passedBindings?: ITabs;
@@ -15,17 +17,17 @@ interface Props {
 
 export const Tabs: FC<Props> = ({ passedBindings }) => {
 
+  if (!passedBindings) return <></>
+
   // SET DEFAULTS
 
-  let defaultBindings: ITabs = {
-    id: Tabs,
-    ...PresetTabs.setPreset(passedBindings)
-  };
-
   const [activeIndex, setActiveIndex] = useState(0);
-  const bindings = _merge(defaultBindings, passedBindings);
+
+  const presetType = !!passedBindings.preset ? passedBindings.preset : "initial"
+  const presetBindings = PresetTabs[presetType]
+  const bindings = createNewBindings(presetBindings, passedBindings)
   const klasses = new KlassInterpreter(bindings);
-  const patternKlasses = [bindings.className, ...klasses.getKlasses()].join(' ');
+  const patternKlasses = cat(bindings.className, ...klasses.getKlasses());
 
   function handleActiveIndexChange(clickedIndex: number) {
     setActiveIndex(clickedIndex);
