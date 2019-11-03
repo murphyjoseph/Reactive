@@ -39,7 +39,7 @@ export const Panel: FC<Props> = ({ passedBindings }) => {
 
       // nodePanelBody wont be null on click but typescript doesnt care... need to find workaround to get rid of any
       const myNode: any = nodePanelBody.current
-      if (myNode.contains(event.target as HTMLElement)) return
+      if (!!isActive && myNode.contains(event.target as HTMLElement)) return
       // ^^ this prevents the panel from closing if you click inside the panel body
 
     setIsActive(false);
