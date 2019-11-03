@@ -13,6 +13,7 @@ const main: IPanel = {
   trigger: {},
   contentBar: {
     containerBindings: {
+      colorBackground: "black",
       padding: {
         direction: "all",
         size: "size2"
@@ -30,7 +31,7 @@ const main: IPanel = {
         size: "size2",
         direction: "all"
       },
-      colorBackground: "grey"
+      colorBackground: "black"
     }
   }
 };

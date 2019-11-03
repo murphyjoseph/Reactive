@@ -1,4 +1,4 @@
-import React, { FC, useState, useEffect, useCallback } from 'react';
+import React, { FC, useState, useEffect, useCallback, useRef } from 'react';
 import _merge from 'lodash/merge';
 
 import { IPanel } from './panel.interface';
@@ -29,12 +29,18 @@ export const Panel: FC<Props> = ({ passedBindings }) => {
   const node = React.createRef<HTMLDivElement>();
   const [isActive, setIsActive] = useState(false);
   const { mousedownHook } = useMouseDown();
+  const nodePanelBody = useRef(null);
 
   const clickOff = useCallback((event?: React.SyntheticEvent) => {
     if (!event
       || !!node
       && !!node.current
       && node.current.contains(event.target as HTMLElement)) return;
+
+      // nodePanelBody wont be null on click but typescript doesnt care... need to find workaround to get rid of any
+      const myNode: any = nodePanelBody.current
+      if (myNode.contains(event.target as HTMLElement)) return
+      // ^^ this prevents the panel from closing if you click inside the panel body
 
     setIsActive(false);
   }, [isActive]);
@@ -128,14 +134,20 @@ export const Panel: FC<Props> = ({ passedBindings }) => {
       {
         isActive && bindings.isPortal &&
         <Portal passedBindings={bindings.portalBindings}>
-          <div className={cat('ut-position-fixed', 'ut-overflow-y-auto', 'panel-portal', panelSize, locationKlass)}>
+          <div
+            className={cat('ut-position-fixed', 'ut-overflow-y-auto', 'panel-portal', panelSize, locationKlass)}
+            ref={nodePanelBody}
+          >
             <PanelBody />
           </div>
         </Portal>
       }
       {
         isActive && bindings.isPortal === false &&
-        <div className={cat('ut-position-absolute', 'ut-overflow-y-auto', 'panel-no-portal', panelSize, locationKlass)}>
+        <div
+          className={cat('ut-position-absolute', 'ut-overflow-y-auto', 'panel-no-portal', panelSize, locationKlass)}
+          ref={nodePanelBody}
+        >
           <PanelBody />
         </div>
       }

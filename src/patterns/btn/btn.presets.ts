@@ -1,19 +1,21 @@
 import { IBtn } from './btn.interface';
 
-const initial: IBtn = {
-  className: undefined,
-  isRounded: false,
-  isSkinny: false,
-  isFull: false
+interface IPresetBtn {
+  initial: IBtn,
+  full: IBtn
 }
 
-const full: IBtn = {
-  className: undefined,
-  isRounded: false,
-  isSkinny: false,
-  isFull: true,
+export const PresetBtn: IPresetBtn = {
+  initial: {
+    className: undefined,
+    isRounded: false,
+    isSkinny: false,
+    isFull: false
+  },
+  full: {
+    className: undefined,
+    isRounded: false,
+    isSkinny: false,
+    isFull: true,
+  }
 }
-
-export const PresetBtn: any = {}
-PresetBtn.initial = initial
-PresetBtn.full = full

@@ -41,6 +41,7 @@
 }
 
 .panel-portal, .panel-no-portal {
+  background: get-color('white');
   &.panel-direction-right {
     @include mi-shadow($direction: "left");
   }

@@ -1,11 +1,12 @@
 import { IPortal } from '../portal/portal.interface';
-import { Presetter } from '../../services/Presetter';
+interface IPresetPortal {
+  initial: IPortal
+}
 
-const main: IPortal = {
-  className: undefined,
-  preset: "main",
-  isBlurred: true
-};
-
-export const PresetPortal = new Presetter<IPortal>(main);
-PresetPortal.presets.main = main;
+export const PresetPortal: IPresetPortal = {
+  initial: {
+    className: undefined,
+    preset: "initial",
+    isBlurred: true
+  }
+}

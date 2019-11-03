@@ -80,10 +80,10 @@ export const Examples: FC = () => {
             slot: <Btn passedBindings={({ text: "Open A Right Panel", brand: "success", display: "block"})} />
           },
           contentBar: {
-            slot: <Text passedBindings={({text: "Content Area for Right Panel"})} />
+            slot: <Text passedBindings={({text: "Content Area for Right Panel", colorText: "white"})} />
           },
           contentArea: {
-            slot: <Text passedBindings={({text: "Content Area for Right Panel. Click outside of right panel to close."})} />
+            slot: <Text passedBindings={({text: "Content Area for Right Panel. Click outside of right panel to close.", colorText: "white"})} />
           }
         })} />
       </Container>

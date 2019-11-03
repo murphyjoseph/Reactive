@@ -1,37 +1,38 @@
 import { IContainer } from "./container.interface";
 
-const initial: IContainer = {
-  className: undefined,
-  href: undefined,
-};
-
-const card: IContainer = {
-  className: undefined,
-  href: undefined,
-  border: {
-    size: "size1",
-    color: "greyLight1",
-    direction: "all"
-  },
-  padding: {
-    direction: "all",
-    size: "size2"
-  }
-};
-
-const section: IContainer = {
-  colorBackground: "white",
-  margin: {
-    size: "size1",
-    direction: "all"
-  },
-  padding: {
-    size: "size1",
-    direction: "all"
-  }
+interface IPresetContainer {
+  initial: IContainer,
+  section: IContainer,
+  card: IContainer
 }
 
-export const PresetContainer: any = {};
-PresetContainer.initial = initial;
-PresetContainer.card = card;
-PresetContainer.section = section;
+export const PresetContainer: IPresetContainer = {
+  initial: {
+    className: undefined,
+    href: undefined,
+  },
+  card:{
+    className: undefined,
+    href: undefined,
+    border: {
+      size: "size1",
+      color: "greyLight1",
+      direction: "all"
+    },
+    padding: {
+      direction: "all",
+      size: "size2"
+    }
+  },
+  section: {
+    colorBackground: "white",
+    margin: {
+      size: "size1",
+      direction: "all"
+    },
+    padding: {
+      size: "size1",
+      direction: "all"
+    }
+  }
+}

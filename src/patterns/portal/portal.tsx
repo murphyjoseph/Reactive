@@ -4,7 +4,7 @@ import { createPortal } from 'react-dom';
 import { IPortal } from './portal.interface';
 import { PresetPortal } from './portal.presets';
 
-import _merge from 'lodash/merge';
+import { createNewBindings } from '../../services/Merge';
 
 interface Props {
   passedBindings?: IPortal;
@@ -16,13 +16,15 @@ const portalRoot = document.getElementById('portal-root') as HTMLElement;
 
 export const Portal: FC<Props> = ({ passedBindings, children }) => {
 
-  // SET DEFAULTS
-  let defaultBindings: IPortal = {
-    id: Portal,
-    ...PresetPortal.setPreset(passedBindings)
-  };
+  // if (!passedBindings) return <></>
 
-  const bindings = _merge(defaultBindings, passedBindings);
+  // SET DEFAULTS
+  // below is a temporary fix - if removed you will get an error regarding the useLayoutEffect hook
+  // todo - fix above ^^
+  passedBindings = !!passedBindings ? passedBindings : {};
+  const presetType = !!passedBindings.preset ? passedBindings.preset : "initial"
+  const presetBindings = PresetPortal[presetType]
+  const bindings = createNewBindings(presetBindings, passedBindings)
 
   useLayoutEffect(() => {
 

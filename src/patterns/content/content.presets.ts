@@ -1,11 +1,14 @@
 import { IContent } from './content.interface';
 
-const initial: IContent = {
-  className: undefined,
-  textBindings: [{ text: "text" }],
-  btnBindings: [{ text: "click" }],
-  containerBindings: { colorBackground: "white" }
-};
+interface IPresetContent {
+  initial: IContent
+}
 
-export const PresetContent: any = {};
-PresetContent.initial = initial;
+export const PresetContent: IPresetContent = {
+  initial: {
+    className: undefined,
+    textBindings: [{ text: "text" }],
+    btnBindings: [{ text: "click" }],
+    containerBindings: { colorBackground: "white" }
+  }
+}

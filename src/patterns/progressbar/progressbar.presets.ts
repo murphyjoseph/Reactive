@@ -1,10 +1,13 @@
 import { IProgressbar } from './progressbar.interface';
 
-const initial: IProgressbar = {
-  className: undefined,
-  max: 100,
-  value: 0
-};
+interface IPresetProgressbar {
+  initial: IProgressbar
+}
 
-export const PresetProgressbar: any = {};
-PresetProgressbar.initial = initial;
+export const PresetProgressbar: IPresetProgressbar = {
+  initial: {
+    className: undefined,
+    max: 100,
+    value: 0
+  }
+}
