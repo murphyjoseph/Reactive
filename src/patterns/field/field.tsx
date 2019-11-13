@@ -154,15 +154,16 @@ export const Field: FC<Props> = ({ passedBindings }) => {
             {...(!!bindings.placeholder ? {placeholder: bindings.placeholder} : {})}
             {...(!!bindings.name ? {name: bindings.name} : {})}
             {...(!!bindings.placeholder ? {placeholder: bindings.placeholder} : {})}
-            {...(!!bindings.readonly ? {readonly:true} : {})}
-            {...(!!bindings.isDisabled ? {disabled:true} : {})}
+            {...(!!bindings.readonly ? {readonly: true} : {})}
+            {...(!!bindings.isDisabled ? {disabled: true} : {})}
+            {...(!!bindings.required ? {required: true} : {})}
             {...(!!bindings.max ? {max: bindings.max} : {})}
+            {...(!!bindings.min ? {max: bindings.min} : {})}
             {...(!!bindings.value ? {value: bindings.value} : {})}
             {...(!!bindings.pattern ? {pattern: bindings.pattern} : {})}
             {...(!!bindings.inputmode ? {placeholder: bindings.inputmode} : {})}
             {...(!!bindings.defaultValue ? {defaultValue: bindings.defaultValue} : {})}
             {...(!!bindings.onChange ? {onChange: bindings.onChange} : {})}
-            {...(!!bindings.required ? {required: bindings.required} : {})}
             {...optionalInputAttributes}>
             {
               bindings.options && bindings.kind === "select" &&
