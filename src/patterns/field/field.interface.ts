@@ -5,19 +5,21 @@ import { IOption } from '../../interfaces/option.interface';
 import { TSizeLabels } from '../../types/util-types';
 import { IStylesSpacing } from '../../interfaces/styles.interface';
 
-type TKinds = "text" | "tel" | "email" | "password" | "date" | "select" | "checkbox" | "radio" | "textarea" | "file" | "number" | "zipcode" | "hidden";
+type TKinds = "submit" | "range" | "reset" | "text" | "tel" | "email" | "password" | "date" | "select" | "checkbox" | "radio" | "textarea" | "file" | "number" | "zipcode" | "hidden";
 
 export interface IField extends IPattern, IState {
   kind?: TKinds,
-  preset?: "main" | "clean" | TKinds,
+  preset?: "initial" | TKinds,
   isBottomSpaced?: boolean,
   onChange?: Function,
   onFocus?: Function,
+  readonly?: boolean,
   isRequired?: boolean,
   isFull?: boolean,
   name?: string,
   form?: string,
   maxLength?: number,
+  max?: number,
   placeholder?: string,
   options?: any[], //string[] | IOption[];
   addEmptyOption?: boolean,
@@ -29,6 +31,8 @@ export interface IField extends IPattern, IState {
   sublabelTextBindings?: IText,
   errorTextBindings?: IText,
   isThin?: boolean,
+  inputmode?: string,
+  pattern?: string,
   maxHeight?: TSizeLabels,
   maxWidth?: TSizeLabels,
   minHeight?: TSizeLabels,

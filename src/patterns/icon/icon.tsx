@@ -10,7 +10,7 @@ import { capitalizeFirst } from "../../utilities/capitalizeFirst";
 
 import styles from './icon.module.scss';
 import { ReactComponent as IconX } from '../../assets/icons/icon_x.svg';
-import cat from '../../utilities/classNames';
+import { cat } from '../../utilities/classNames';
 
 interface Props {
   passedBindings?: IIcon;

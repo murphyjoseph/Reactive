@@ -1,6 +1,6 @@
-import { IStylesColor, IStylesText } from './styles.interface';
 import { ILink } from './link.interface';
-import { string } from 'prop-types';
+import { IStylesColor,
+         IStylesText } from './styles.interface';
 
 export interface IText extends IStylesColor, IStylesText, ILink {
   text?: string

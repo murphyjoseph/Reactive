@@ -12,9 +12,23 @@ import { Container } from "../container/container";
 import styles from './field.module.scss';
 
 import { KlassInterpreter } from '../../services/KlassInterpreter';
-import { stFlexColYCenter, stFlexColAuto1, stFlexColPercent100, stFlex, stFlexWrap, utPositionRelative, utMarginBottomSize1, utMarginRightSize2, stFlexColOrderFirst, stFlexColOrderLast, utMarginLeftSize2 } from "../../styles/application-styles.module.scss";
 import { capitalizeFirst } from "../../utilities/capitalizeFirst";
-import cat from "../../utilities/classNames";
+import { cat } from "../../utilities/classNames";
+import { createNewBindings } from "../../services/Merge";
+
+import { stFlexColYCenter,
+         stFlexColAuto1,
+         stFlexColPercent100,
+         stFlex,
+         stFlexWrap,
+         utPositionRelative,
+         utMarginBottomSize1,
+         utMarginRightSize2,
+         stFlexColOrderFirst,
+         stFlexColOrderLast,
+         utMarginLeftSize2 } from "../../styles/application-styles.module.scss";
+
+const Styles = styles as { [key: string]: string };
 
 interface Props {
   passedBindings?: IField;
@@ -51,15 +65,14 @@ function normalizeOptions(options: (string | IOption)[], addEmptyOption: boolean
 
 export const Field: FC<Props> = ({ passedBindings }) => {
 
+  if (!passedBindings) return <></>
+
   // SET DEFAULTS
 
-  let defaultBindings: IField = {
-    id: Field,
-    ...PresetField.setPreset(passedBindings)
-  };
+  const presetType = !!passedBindings.preset ? passedBindings.preset : "initial"
+  const presetBindings = PresetField[presetType]
+  const bindings = createNewBindings(presetBindings, passedBindings)
 
-  const Styles = styles as { [key: string]: string };
-  const bindings = _merge(defaultBindings, passedBindings);
   const klasses = new KlassInterpreter(bindings);
   fieldKlassInterpreter(bindings, klasses);
   const patternKlasses = cat(Styles.fieldWrapper, bindings.className, ...klasses.getKlasses());
@@ -138,17 +151,22 @@ export const Field: FC<Props> = ({ passedBindings }) => {
           <Tag
             className={cat(Styles.fieldInput, KlassMaxHeight, isFull, KlassMinWidth, KlassMaxWidth, KlassMinHeight)}
             type={bindings.kind}
-            name={bindings.name}
-            placeholder={bindings.placeholder}
-            disabled={bindings.isDisabled}
-            value={bindings.value}
-            defaultValue={bindings.defaultValue}
-            onChange={bindings.onChange}
-            required={bindings.isRequired}
+            {...(!!bindings.placeholder ? {placeholder: bindings.placeholder} : {})}
+            {...(!!bindings.name ? {name: bindings.name} : {})}
+            {...(!!bindings.placeholder ? {placeholder: bindings.placeholder} : {})}
+            {...(!!bindings.readonly ? {readonly:true} : {})}
+            {...(!!bindings.isDisabled ? {disabled:true} : {})}
+            {...(!!bindings.max ? {max: bindings.max} : {})}
+            {...(!!bindings.value ? {value: bindings.value} : {})}
+            {...(!!bindings.pattern ? {pattern: bindings.pattern} : {})}
+            {...(!!bindings.inputmode ? {placeholder: bindings.inputmode} : {})}
+            {...(!!bindings.defaultValue ? {defaultValue: bindings.defaultValue} : {})}
+            {...(!!bindings.onChange ? {onChange: bindings.onChange} : {})}
+            {...(!!bindings.required ? {required: bindings.required} : {})}
             {...optionalInputAttributes}>
             {
               bindings.options && bindings.kind === "select" &&
-              bindings.options.map((option, index) => (
+              bindings.options.map((option: IOption, index: number) => (
                 <option
                   key={index}
                   value={option.id}

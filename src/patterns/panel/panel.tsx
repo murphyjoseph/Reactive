@@ -11,7 +11,7 @@ import { Portal } from '../portal/portal';
 import { Container } from '../container/container';
 import { Icon } from '../icon/icon'
 
-import cat from '../../utilities/classNames';
+import { cat } from '../../utilities/classNames';
 import { panelKlassInterpreter } from './panel.klass-interpreter';
 import { useMouseDown } from '../../hooks/mousedown';
 import { KlassInterpreter } from '../../services/KlassInterpreter';

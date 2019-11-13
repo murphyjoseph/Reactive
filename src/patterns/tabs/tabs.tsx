@@ -8,7 +8,7 @@ import { MediaFlag } from '../media-flag/media-flag';
 import { KlassInterpreter } from '../../services/KlassInterpreter';
 import { stFlexColAuto1, stFlex, stFlexNowrap, stFlexColPercent100 } from '../../styles/application-styles.module.scss'
 import _merge from 'lodash/merge';
-import cat from '../../utilities/classNames';
+import { cat } from '../../utilities/classNames';
 import { createNewBindings } from '../../services/Merge';
 
 interface Props {

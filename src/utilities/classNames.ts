@@ -6,5 +6,4 @@ export const classNames = (...args: (string | undefined)[]) => !!args ? args.joi
 
 // what is this, bash?
 // mimic https://github.com/JedWatson/classnames without unnecessary junk
-const cat = classNames;
-export default cat;
+export const cat = classNames;

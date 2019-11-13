@@ -10,7 +10,7 @@ import { KlassInterpreter } from '../../services/KlassInterpreter';
 import standardBreakpoints from "../../styles/constants/constant-breakpoints.module.scss";
 
 import { utImgCircle } from "../../styles/application-styles.module.scss";
-import cat from "../../utilities/classNames";
+import { cat } from "../../utilities/classNames";
 
 interface Props {
   passedBindings?: IImg;

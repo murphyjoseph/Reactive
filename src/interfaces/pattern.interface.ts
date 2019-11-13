@@ -1,8 +1,10 @@
-import React from 'react';
-
 export interface IPattern {
   className?: string,
-  id?: number | React.ReactNode,
+  id?: any,
+  style?: any,
   interpreterKlasses?: string,
-  internalKlasses?: string
+  internalKlasses?: string,
+  title?: string,
+  tabindex?: string,
+  hidden?: boolean
 }

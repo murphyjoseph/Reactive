@@ -7,7 +7,7 @@ import { PresetBtn } from './btn.presets';
 import { btnKlassInterpreter } from './btn.klass-interpreter';
 
 import { Patternize } from "../patternize/patternize";
-import cat from '../../utilities/classNames';
+import { cat } from '../../utilities/classNames';
 import { createNewBindings } from '../../services/Merge';
 
 interface Props {

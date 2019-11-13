@@ -1,4 +1,13 @@
-import { TBreakpoints, TColors, TSizeLabels, TPositionLabels, TDirectionLabels, TAlignmentText, TBranding, TPositionTypes, TSpacingDirections, TDisplaySettings, TTextStyles } from '../types/util-types';
+import { TBreakpoints,
+         TColors,
+         TSizeLabels,
+         TPositionLabels,
+         TDirectionLabels,
+         TAlignmentText,
+         TBranding,
+         TPositionTypes,
+         TSpacingDirections,
+         TDisplaySettings } from '../types/util-types';
 
 export interface IStylesGrid {
   container: "",

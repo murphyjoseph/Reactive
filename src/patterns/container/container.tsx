@@ -5,7 +5,7 @@ import { PresetContainer } from './container.presets';
 
 import { containerKlassInterpreter } from "./container.klass-interpreter";
 import { createNewBindings } from "../../services/Merge";
-import cat from "../../utilities/classNames";
+import { cat } from "../../utilities/classNames";
 import { Patternize } from "../patternize/patternize";
 
 interface Props {

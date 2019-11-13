@@ -11,7 +11,7 @@ import { Btn } from '../btn/btn';
 import { Icon } from '../icon/icon';
 
 import { KlassInterpreter } from '../../services/KlassInterpreter';
-import cat from '../../utilities/classNames';
+import { cat } from '../../utilities/classNames';
 
 interface Props {
   passedBindings?: IModal;

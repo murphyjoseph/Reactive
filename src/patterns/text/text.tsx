@@ -4,7 +4,7 @@ import { IText } from './text.interface';
 import { textKlassInterpreter } from "./text.klass-interpreter";
 import { PresetText } from './text.presets';
 
-import cat from "../../utilities/classNames";
+import { cat } from "../../utilities/classNames";
 import { Patternize } from "../patternize/patternize";
 import { createNewBindings } from "../../services/Merge";
 

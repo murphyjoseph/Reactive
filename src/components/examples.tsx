@@ -7,6 +7,7 @@ import { Content } from "../patterns/content/content";
 import { Accordion } from "../patterns/accordion/accordion";
 import { Modal } from "../patterns/modal/modal";
 import { Panel } from '../patterns/panel/panel';
+import { Field } from "../patterns/field/field";
 
 export const Examples: FC = () => {
 
@@ -89,7 +90,7 @@ export const Examples: FC = () => {
       </Container>
 
       <Container passedBindings={({
-        colorBackground: "global",
+        colorBackground: "white",
         margin: {size: "size1", direction: "all"},
         padding: [
           {
@@ -143,6 +144,7 @@ export const Examples: FC = () => {
               href: "https://www.google.com"
             }]
         })} />
+        <Field passedBindings={({ preset: "tel", placeholder: "0-999-999-9999" })}></Field>
         <Text passedBindings={({ text: statefulText, kind: "h1", isBig: true, colorText: statefulColor, textAlignment: "right"})} />
         <Text passedBindings={({ text: statefulText, kind: "h1", isBig: true, colorText: statefulColor, textAlignment: "right"})} />
         <Text passedBindings={({ text: statefulText, kind: "h1", isBig: true, colorText: statefulColor, textAlignment: "right"})} />
